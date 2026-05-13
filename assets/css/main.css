@@ -790,3 +790,289 @@
         height: 58px;
       }
     }
+
+    /* Decklist banner */
+    .decklist-banner {
+      margin: 20px 0 28px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      background: rgba(204, 167, 83, 0.08);
+      border: 1px solid rgba(204, 167, 83, 0.25);
+      text-align: center;
+    }
+
+    .decklist-banner a {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 180ms ease;
+    }
+
+    .decklist-banner a:hover {
+      color: #e0c47a;
+    }
+
+    .decklist-banner-icon {
+      font-size: 1.2em;
+    }
+
+    /* Decklist container */
+    .decklist-container {
+      margin: 0 0 32px;
+      padding: 24px;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .decklist-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .decklist-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.4rem;
+    }
+
+    .decklist-views {
+      display: flex;
+      gap: 4px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      padding: 3px;
+    }
+
+    .decklist-view-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 150ms ease;
+    }
+
+    .decklist-view-btn.active {
+      background: var(--secondary);
+      color: var(--text);
+    }
+
+    .decklist-view-btn:hover:not(.active) {
+      color: var(--text);
+    }
+
+    .decklist-loading {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .decklist-error {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .decklist-error a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Commander display */
+    .decklist-commander {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .decklist-commander img {
+      width: 240px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      margin: 0 auto;
+    }
+
+    .decklist-commander-name {
+      margin: 8px 0 0;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Type group */
+    .decklist-group {
+      margin-bottom: 20px;
+    }
+
+    .decklist-group-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .decklist-group-header::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(204, 167, 83, 0.2);
+    }
+
+    .decklist-group-count {
+      font-weight: 400;
+      opacity: 0.7;
+      font-size: 0.72rem;
+    }
+
+    /* List view */
+    .decklist-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2px 24px;
+    }
+
+    .decklist-list-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 0;
+      font-size: 0.92rem;
+      cursor: default;
+    }
+
+    .decklist-list-item:hover {
+      color: var(--glow);
+    }
+
+    .decklist-qty {
+      color: var(--muted);
+      font-size: 0.85rem;
+      min-width: 16px;
+      text-align: right;
+    }
+
+    .decklist-card-name {
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .decklist-mana {
+      display: inline-flex;
+      gap: 1px;
+      flex-shrink: 0;
+    }
+
+    .mana-sym {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1;
+      border: 1px solid rgba(0,0,0,0.3);
+    }
+
+    .mana-w { background: #f0f2c0; color: #2c2000; }
+    .mana-u { background: #3b6ba0; color: #fff; }
+    .mana-b { background: #383431; color: #fff; }
+    .mana-r { background: #c6553e; color: #fff; }
+    .mana-g { background: #3d684b; color: #fff; }
+    .mana-c { background: #beb9b2; color: #1a1a1a; }
+    .mana-generic { background: #8a8a8a; color: #fff; }
+    .mana-x { background: #8a8a8a; color: #fff; }
+
+    /* Visual spoiler view */
+    .decklist-visual {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 0;
+      padding: 4px 56px 10px 0;
+    }
+
+    .decklist-visual-card {
+      width: 100px;
+      margin-right: -56px;
+      transition: transform 200ms ease, z-index 0ms;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .decklist-visual-card:hover {
+      transform: scale(2.2);
+      z-index: 100;
+    }
+
+    .decklist-visual-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      display: block;
+    }
+
+    .decklist-visual-card:last-child {
+      margin-right: 0;
+    }
+
+    /* Hide inactive view */
+    .decklist-body[data-view="visual"] .decklist-list {
+      display: none;
+    }
+
+    .decklist-body[data-view="list"] .decklist-visual {
+      display: none;
+    }
+
+    /* Make card items in list view also trigger hover previews */
+    .decklist-list-item .decklist-card-name {
+      position: relative;
+    }
+
+    @media (max-width: 640px) {
+      .decklist-container {
+        padding: 16px;
+      }
+
+      .decklist-list {
+        grid-template-columns: 1fr;
+      }
+
+      .decklist-visual-card {
+        width: 80px;
+        margin-right: -44px;
+      }
+
+      .decklist-visual-card:hover {
+        transform: scale(1.8);
+      }
+
+      .decklist-commander img {
+        width: 180px;
+      }
+    }

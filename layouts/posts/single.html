@@ -11,6 +11,28 @@
     </div>
     {{ end }}
   </div>
+  {{ with .Params.decklist }}
+  <div class="decklist-banner">
+    <a href="{{ . }}" target="_blank" rel="noopener">
+      <span class="decklist-banner-icon">⚔</span>
+      View Full Decklist on Moxfield
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+  <div class="decklist-container" data-deck-url="{{ . }}" id="decklist">
+    <div class="decklist-header">
+      <h2 class="decklist-title">Decklist</h2>
+      <div class="decklist-views">
+        <button class="decklist-view-btn active" data-view="list">List</button>
+        <button class="decklist-view-btn" data-view="visual">Visual</button>
+      </div>
+    </div>
+    <div class="decklist-commander" id="decklist-commander"></div>
+    <div class="decklist-body" id="decklist-body">
+      <p class="decklist-loading">Loading decklist…</p>
+    </div>
+  </div>
+  {{ end }}
   <div class="post-body">
     {{ .Content }}
   </div>

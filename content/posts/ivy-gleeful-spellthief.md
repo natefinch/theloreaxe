@@ -4,6 +4,7 @@ date: 2026-05-10T09:00:00-04:00
 draft: false
 description: "A unique simic commander that creates a wide diversity in gameplay."
 tags: ["Commander", "Deck Tech"]
+decklist: "https://moxfield.com/decks/tUf66lw9ik6boigQH_d4Qw"
 ---
 
 ## Overview

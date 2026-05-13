@@ -85,3 +85,166 @@
   });
 })();
 </script>
+<script>
+(function() {
+  var container = document.querySelector('.decklist-container');
+  if (!container) return;
+
+  var deckUrl = container.getAttribute('data-deck-url');
+  if (!deckUrl) return;
+
+  var match = deckUrl.match(/\/decks\/([^/?#]+)/);
+  if (!match) return;
+  var deckId = match[1];
+
+  var commanderEl = document.getElementById('decklist-commander');
+  var bodyEl = document.getElementById('decklist-body');
+  var currentView = 'list';
+  var TYPE_ORDER = ['Battle', 'Planeswalker', 'Creature', 'Sorcery', 'Instant', 'Artifact', 'Enchantment', 'Land'];
+
+  var viewBtns = container.querySelectorAll('.decklist-view-btn');
+  viewBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      currentView = btn.getAttribute('data-view');
+      viewBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      bodyEl.setAttribute('data-view', currentView);
+    });
+  });
+
+  function categorizeCard(card) {
+    var typeLine = (card.type_line || '').toLowerCase();
+    for (var i = 0; i < TYPE_ORDER.length; i++) {
+      if (typeLine.includes(TYPE_ORDER[i].toLowerCase())) return TYPE_ORDER[i];
+    }
+    return 'Other';
+  }
+
+  function scryfallImageUrl(name) {
+    return 'https://api.scryfall.com/cards/named?exact=' + encodeURIComponent(name) + '&format=image&version=normal';
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function renderManaCost(manaCost) {
+    if (!manaCost) return '';
+    var symbols = manaCost.match(/\{([^}]+)\}/g) || [];
+    return symbols.map(function(sym) {
+      var s = sym.replace(/[{}]/g, '').toUpperCase();
+      var cls = 'mana-sym ';
+      if (s === 'W') cls += 'mana-w';
+      else if (s === 'U') cls += 'mana-u';
+      else if (s === 'B') cls += 'mana-b';
+      else if (s === 'R') cls += 'mana-r';
+      else if (s === 'G') cls += 'mana-g';
+      else if (s === 'C') cls += 'mana-c';
+      else if (s === 'X') cls += 'mana-x';
+      else cls += 'mana-generic';
+      return '<span class="' + cls + '">' + s + '</span>';
+    }).join('');
+  }
+
+  function normalizeBoard(board) {
+    var cards = [];
+    Object.keys(board || {}).forEach(function(key) {
+      var entry = board[key] || {};
+      var card = entry.card || {};
+      cards.push({
+        name: card.name || '',
+        qty: entry.quantity || 0,
+        manaCost: card.mana_cost || '',
+        cmc: card.cmc || 0,
+        typeLine: card.type_line || '',
+        category: categorizeCard(card)
+      });
+    });
+    return cards;
+  }
+
+  function renderDecklist(data) {
+    var commanders = data.commanders || {};
+    var cmdHtml = '';
+    Object.keys(commanders).forEach(function(key) {
+      var entry = commanders[key] || {};
+      var card = entry.card || {};
+      if (!card.name) return;
+      var safeCommanderName = escapeHtml(card.name);
+      cmdHtml += '<div style="display:inline-block;margin:0 8px;">';
+      cmdHtml += '<img src="' + scryfallImageUrl(card.name) + '" alt="' + safeCommanderName + '" loading="lazy">';
+      cmdHtml += '<p class="decklist-commander-name">' + safeCommanderName + '</p>';
+      cmdHtml += '</div>';
+    });
+    commanderEl.innerHTML = cmdHtml;
+
+    var cards = normalizeBoard(data.mainboard);
+    var groups = {};
+    TYPE_ORDER.concat(['Other']).forEach(function(type) { groups[type] = []; });
+    cards.forEach(function(card) {
+      if (!groups[card.category]) groups[card.category] = [];
+      groups[card.category].push(card);
+    });
+
+    Object.keys(groups).forEach(function(category) {
+      groups[category].sort(function(a, b) {
+        if (a.cmc !== b.cmc) return a.cmc - b.cmc;
+        return a.name.localeCompare(b.name);
+      });
+    });
+
+    var html = '';
+    TYPE_ORDER.concat(['Other']).forEach(function(category) {
+      var group = groups[category];
+      if (!group || group.length === 0) return;
+
+      var totalCards = group.reduce(function(sum, card) { return sum + card.qty; }, 0);
+      html += '<div class="decklist-group">';
+      html += '<div class="decklist-group-header">' + category;
+      html += ' <span class="decklist-group-count">(' + totalCards + ')</span></div>';
+
+      html += '<ul class="decklist-list">';
+      group.forEach(function(card) {
+        var safeCardName = escapeHtml(card.name);
+        html += '<li class="decklist-list-item card-ref-wrap">';
+        html += '<span class="decklist-qty">' + card.qty + '</span>';
+        html += '<span class="decklist-card-name card-ref" data-card="' + safeCardName + '">' + safeCardName + '</span>';
+        html += '<span class="decklist-mana">' + renderManaCost(card.manaCost) + '</span>';
+        html += '</li>';
+      });
+      html += '</ul>';
+
+      html += '<div class="decklist-visual">';
+      group.forEach(function(card) {
+        var safeCardName = escapeHtml(card.name);
+        for (var i = 0; i < card.qty; i++) {
+          html += '<div class="decklist-visual-card">';
+          html += '<img src="' + scryfallImageUrl(card.name) + '" alt="' + safeCardName + '" loading="lazy">';
+          html += '</div>';
+        }
+      });
+      html += '</div>';
+      html += '</div>';
+    });
+
+    bodyEl.innerHTML = html;
+    bodyEl.setAttribute('data-view', currentView);
+  }
+
+  fetch('https://api2.moxfield.com/v3/decks/all/' + deckId)
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(renderDecklist)
+    .catch(function(err) {
+      console.warn('Could not load decklist:', err);
+      bodyEl.innerHTML = '<p class="decklist-error">Could not load decklist automatically. <a href="' + deckUrl + '" target="_blank" rel="noopener">View it on Moxfield →</a></p>';
+    });
+})();
+</script>
