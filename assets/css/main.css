@@ -804,34 +804,6 @@
       }
     }
 
-    /* Decklist banner */
-    .decklist-banner {
-      margin: 20px 0 28px;
-      padding: 14px 20px;
-      border-radius: 12px;
-      background: rgba(204, 167, 83, 0.08);
-      border: 1px solid rgba(204, 167, 83, 0.25);
-      text-align: center;
-    }
-
-    .decklist-banner a {
-      color: var(--gold);
-      font-weight: 600;
-      font-size: 1.05rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 180ms ease;
-    }
-
-    .decklist-banner a:hover {
-      color: #e0c47a;
-    }
-
-    .decklist-banner-icon {
-      font-size: 1.2em;
-    }
-
     /* Sidebar decklist panel */
     .sidebar-decklist {
       margin-top: 16px;
@@ -845,9 +817,22 @@
     }
 
     .decklist-title {
-      margin: 0 0 16px;
+      margin: 0 0 4px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.1rem;
+    }
+
+    .decklist-moxfield-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      transition: color 180ms ease;
+    }
+
+    .decklist-moxfield-link:hover {
+      color: var(--glow);
     }
 
     .decklist-loading {

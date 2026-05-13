@@ -12,15 +12,6 @@
     {{ end }}
   </div>
   {{ if .Params.cards }}
-  <div class="decklist-banner">
-    {{ with .Params.decklist }}
-    <a href="{{ . }}" target="_blank" rel="noopener">
-      <span class="decklist-banner-icon">⚔</span>
-      View Full Decklist on Moxfield
-      <span aria-hidden="true">→</span>
-    </a>
-    {{ end }}
-  </div>
   {{ end }}
   <div class="post-body">
     {{ .Content }}

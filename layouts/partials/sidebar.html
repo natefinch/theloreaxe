@@ -32,6 +32,9 @@
   {{ if .Params.cards }}
   <div class="sidebar-decklist" id="decklist">
     <h2 class="decklist-title">Decklist</h2>
+    {{ with .Params.decklist }}
+    <a class="decklist-moxfield-link" href="{{ . }}" target="_blank" rel="noopener">View on Moxfield →</a>
+    {{ end }}
     <div class="decklist-commander" id="decklist-commander"></div>
     <div class="decklist-body" id="decklist-body">
       <p class="decklist-loading">Loading decklist…</p>
