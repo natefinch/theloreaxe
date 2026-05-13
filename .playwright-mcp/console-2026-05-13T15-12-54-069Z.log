@@ -4645,3 +4645,179 @@ https://goo.gle/gpt-message#155 @ https://securepubads.g.doubleclick.net/pagead/
 [    4530ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://partners.tremorhub.com/sync?UIIQ=bc076a2a-f752-461a-aebf-f29cf9f75638:0
 [    4582ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://pxl.iqm.com/i/ck/pubmatic?puid=D550CFC9-AE63-49A9-8164-54037610336B:0
 [ 5453745ms] [INFO] NitroAds: Ad Unit: deck-midbanner-floating-ad-desktop, display, 019e2239-18e6-7035-b3a0-7d649b5befcf @ https://s.nitropay.com/ads-546.js:1
+[ 5459788ms] [INFO] NitroAds: Ad Unit: deckheader-floating-ad-desktop, display, 019e2239-3080-7391-8341-a8b4cbe36462 @ https://s.nitropay.com/ads-546.js:1
+[ 5460627ms] [INFO] NitroAds: Ad Unit: unauthedvideo, floating, 019e2239-33c7-7347-8965-0e824cad160e @ https://s.nitropay.com/ads-546.js:1
+[ 5460774ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://prebid-server.rubiconproject.com/openrtb2/auction:0
+[ 5485756ms] [INFO] NitroAds: Ad Unit: deck-midbanner-floating-ad-desktop, display, 019e2239-95f0-735b-9894-599bcff5bb37 @ https://s.nitropay.com/ads-546.js:1
+[ 5487473ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://cdn.confiant-integrations.net/gptprebidnative/202604301904/wrap.js:82
+[ 5487733ms] [LOG] click url value: https://clk.srv.stackadapt.com/clk?aid=1-9371-177869066002071014009065-1&cid=2825772&adid=11487850&sid=1&uid=QzKtsfXazvfzB_CorAJnhw&did=moxfield.com%3A%3A11&adurl=https%3A%2F%2Feast.srv.stackadapt.com&t=1778690660&brandname=Link+Logistics&adheading=&iidx=0&nid=11&bip=NzIuNzQuNjUuMTgw&conv=true&curl=aHR0cHM6Ly93d3cubGlua2xvZ2lzdGljcy5jb20vaW5kdXN0cmlhbC1wcm9wZXJ0aWVzLz91dG1fc291cmNlPXN0YWNrYWRhcHQmdXRtX21lZGl1bT1kaXNwbGF5JnV0bV9jYW1wYWlnbj1hb19ydCZ1dG1fY29udGVudD12aWRlbw%3D%3D&r= @ https://creative.stackadapt.com/js/param.js:210
+[ 5491840ms] [INFO] NitroAds: Ad Unit: deckheader-floating-ad-desktop, display, 019e2239-adb4-741b-a96c-0ba9b7d2d6a6 @ https://s.nitropay.com/ads-546.js:1
+[ 5492061ms] [INFO] NitroAds: Ad Unit: unauthedvideo, floating, 019e2239-ae91-728f-9ec9-5aa5a26f535b @ https://s.nitropay.com/ads-546.js:1
+[ 5492197ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://prebid-server.rubiconproject.com/openrtb2/auction:0
+[ 5493893ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://cdn.confiant-integrations.net/gptprebidnative/202604301904/wrap.js:82
+[ 5494235ms] [LOG]  [  0.000s] [studio.sdk]   @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494254ms] [LOG] click url value: https://clk.srv.stackadapt.com/clk?aid=1-8134-177869066613195309601380-1&cid=3128128&adid=13389820&sid=1&uid=OXY9rROw49FKXsqo6JFk3g&did=moxfield.com%3A%3A11&adurl=https%3A%2F%2Feast.srv.stackadapt.com&t=1778690666&brandname=Trex&adheading=&iidx=0&nid=11&bip=NzIuNzQuNjUuMTgw&conv=true&curl=aHR0cHM6Ly93d3cudHJleC5jb20vd2h5LXRyZXgvP3V0bV9zb3VyY2U9U3RhY2tBZGFwdCZ1dG1fbWVkaXVtPVByb2dyYW1tYXRpYyZ1dG1fY2FtcGFpZ249U2Vlcl9UcmV4XzIwMjZfRG9tZXN0aWNfQXVkaWVuY2VfRGlzcGxheV9ESUZNJnV0bV9jb250ZW50PVRyZXgrKy0rK0lCViswMDErKy0rK0hUTUw1KystKys3Mjh4OTA%3D&r= @ https://creative.stackadapt.com/js/param.js:210
+[ 5494255ms] [LOG]  [  0.020s] [studio.sdk] Using default ad parameters in test environment. Simulating local events.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494520ms] [LOG]  [  0.285s] [ima.legacy.vast.VideoDisplayEventTracker] dispatching event creativeview  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494520ms] [LOG]  [  0.285s] [ima.legacy.vast.VideoDisplayEventTracker] dispatching event start  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494520ms] [LOG]  [  0.286s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_PLAY" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494520ms] [LOG]  [  0.286s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_VIEW_TIMER" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494520ms] [LOG]  [  0.286s] [ima.legacy.vast.VideoDisplayEventTracker] dispatching event mute  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494520ms] [LOG]  [  0.286s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_INTERACTION" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494520ms] [LOG]  [  0.286s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_MUTE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5494780ms] [LOG]  [  0.545s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5495046ms] [LOG]  [  0.811s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5495312ms] [LOG]  [  1.077s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5495577ms] [LOG]  [  1.343s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5495843ms] [LOG]  [  1.608s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5496108ms] [LOG]  [  1.873s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5496374ms] [LOG]  [  2.139s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5496640ms] [LOG]  [  2.405s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5496904ms] [LOG]  [  2.670s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5497171ms] [LOG]  [  2.937s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5497437ms] [LOG]  [  3.202s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5497703ms] [LOG]  [  3.468s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5497968ms] [LOG]  [  3.733s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5498232ms] [LOG]  [  3.998s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5498499ms] [LOG]  [  4.265s] [ima.legacy.vast.VideoDisplayEventTracker] dispatching event firstquartile  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5498499ms] [LOG]  [  4.265s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_FIRSTQUARTILE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5498499ms] [LOG]  [  4.265s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5498764ms] [LOG]  [  4.529s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5499030ms] [LOG]  [  4.796s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5499295ms] [LOG]  [  5.061s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5499562ms] [LOG]  [  5.327s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5499827ms] [LOG]  [  5.593s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5500094ms] [LOG]  [  5.859s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5500358ms] [LOG]  [  6.124s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5500625ms] [LOG]  [  6.390s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5500890ms] [LOG]  [  6.656s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5501154ms] [LOG]  [  6.920s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5501421ms] [LOG]  [  7.186s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5501686ms] [LOG]  [  7.452s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5501952ms] [LOG]  [  7.718s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5502218ms] [LOG]  [  7.984s] [ima.legacy.vast.VideoDisplayEventTracker] dispatching event midpoint  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5502219ms] [LOG]  [  7.984s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_MIDPOINT" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5502219ms] [LOG]  [  7.984s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5502483ms] [LOG]  [  8.248s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5502750ms] [LOG]  [  8.515s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5503015ms] [LOG]  [  8.781s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5503280ms] [LOG]  [  9.045s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5503546ms] [LOG]  [  9.312s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5503812ms] [LOG]  [  9.578s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5504077ms] [LOG]  [  9.843s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5504342ms] [LOG]  [ 10.108s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5504608ms] [LOG]  [ 10.374s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5504874ms] [LOG]  [ 10.640s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5505139ms] [LOG]  [ 10.905s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5505406ms] [LOG]  [ 11.171s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5505671ms] [LOG]  [ 11.437s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5505937ms] [LOG]  [ 11.702s] [ima.legacy.vast.VideoDisplayEventTracker] dispatching event thirdquartile  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5505937ms] [LOG]  [ 11.703s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_THIRDQUARTILE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5505937ms] [LOG]  [ 11.703s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5506202ms] [LOG]  [ 11.968s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5506467ms] [LOG]  [ 12.232s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5506732ms] [LOG]  [ 12.498s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5506999ms] [LOG]  [ 12.764s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5507265ms] [LOG]  [ 13.030s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5507530ms] [LOG]  [ 13.296s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5507796ms] [LOG]  [ 13.561s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5508061ms] [LOG]  [ 13.826s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5508327ms] [LOG]  [ 14.093s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5508594ms] [LOG]  [ 14.359s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5508859ms] [LOG]  [ 14.624s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5509124ms] [LOG]  [ 14.889s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5509390ms] [LOG]  [ 15.155s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5509649ms] [LOG]  [ 15.414s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5509905ms] [LOG]  [ 15.670s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5510171ms] [LOG]  [ 15.937s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5510436ms] [LOG]  [ 16.201s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5510702ms] [LOG]  [ 16.468s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5510968ms] [LOG]  [ 16.733s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5511233ms] [LOG]  [ 16.999s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5511499ms] [LOG]  [ 17.264s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5511765ms] [LOG]  [ 17.530s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5512030ms] [LOG]  [ 17.796s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5512296ms] [LOG]  [ 18.062s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5512562ms] [LOG]  [ 18.328s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5512827ms] [LOG]  [ 18.592s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5513093ms] [LOG]  [ 18.858s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5513359ms] [LOG]  [ 19.124s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5513625ms] [LOG]  [ 19.390s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5513891ms] [LOG]  [ 19.656s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5514155ms] [LOG]  [ 19.921s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5514421ms] [LOG]  [ 20.186s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5514686ms] [LOG]  [ 20.452s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5514952ms] [LOG]  [ 20.717s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5515218ms] [LOG]  [ 20.983s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5515483ms] [LOG]  [ 21.249s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5515749ms] [LOG]  [ 21.515s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5516015ms] [LOG]  [ 21.781s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5516280ms] [LOG]  [ 22.046s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5516547ms] [LOG]  [ 22.312s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5516812ms] [LOG]  [ 22.577s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5517077ms] [LOG]  [ 22.843s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5517343ms] [LOG]  [ 23.109s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5517487ms] [INFO] NitroAds: Ad Unit: deck-midbanner-floating-ad-desktop, display, 019e223a-11e3-76af-9e05-7affe2c335af @ https://s.nitropay.com/ads-546.js:1
+[ 5517608ms] [LOG]  [ 23.374s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5517874ms] [LOG]  [ 23.640s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5518140ms] [LOG]  [ 23.906s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5518404ms] [LOG]  [ 24.170s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5518671ms] [LOG]  [ 24.436s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5518936ms] [LOG]  [ 24.701s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5519202ms] [LOG]  [ 24.968s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5519343ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://cdn.confiant-integrations.net/gptprebidnative/202604301904/wrap.js:82
+[ 5519468ms] [LOG]  [ 25.234s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[    4530ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://partners.tremorhub.com/sync?UIIQ=bc076a2a-f752-461a-aebf-f29cf9f75638:0
+[    4582ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://pxl.iqm.com/i/ck/pubmatic?puid=D550CFC9-AE63-49A9-8164-54037610336B:0
+[ 5519733ms] [LOG]  [ 25.499s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5519999ms] [LOG]  [ 25.764s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5520265ms] [LOG]  [ 26.030s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5520530ms] [LOG]  [ 26.296s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5520796ms] [LOG]  [ 26.562s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5521061ms] [LOG]  [ 26.827s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5521327ms] [LOG]  [ 27.092s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5521592ms] [LOG]  [ 27.358s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5521859ms] [LOG]  [ 27.624s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5521970ms] [ERROR] Access to fetch at 'https://a.nitropay.com/v4/openrtb2' from origin 'https://moxfield.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://moxfield.com/decks/tUf66lw9ik6boigQH_d4Qw:0
+[ 5521970ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://a.nitropay.com/v4/openrtb2:0
+[ 5522124ms] [LOG]  [ 27.889s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5522390ms] [LOG]  [ 28.156s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5522655ms] [LOG]  [ 28.421s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5522921ms] [LOG]  [ 28.686s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5523187ms] [LOG]  [ 28.952s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5523452ms] [LOG]  [ 29.218s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5523551ms] [INFO] NitroAds: Ad Unit: unauthedvideo, floating, 019e223a-2994-7dcf-b655-66779024af73 @ https://s.nitropay.com/ads-546.js:1
+[ 5523718ms] [LOG]  [ 29.484s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5523732ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://prebid-server.rubiconproject.com/openrtb2/auction:0
+[ 5523910ms] [INFO] NitroAds: Ad Unit: deckheader-floating-ad-desktop, display, 019e223a-2afb-743d-b870-42825b478663 @ https://s.nitropay.com/ads-546.js:1
+[ 5523983ms] [LOG]  [ 29.749s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5524249ms] [LOG]  [ 30.015s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5524516ms] [LOG]  [ 30.281s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5524780ms] [LOG]  [ 30.545s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5525046ms] [LOG]  [ 30.811s] [studio.sdk] Video "SA_video_1" dispatching "EVENT_VIDEO_TIMEUPDATE" event.  @ https://s0.2mdn.net/ads/studio/Enabler.js:215
+[ 5525507ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://cdn.confiant-integrations.net/gptprebidnative/202604301904/wrap.js:82
+[    4530ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://partners.tremorhub.com/sync?UIIQ=bc076a2a-f752-461a-aebf-f29cf9f75638:0
+[    4582ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://pxl.iqm.com/i/ck/pubmatic?puid=D550CFC9-AE63-49A9-8164-54037610336B:0
+[ 5549361ms] [INFO] NitroAds: Ad Unit: deck-midbanner-floating-ad-desktop, display, 019e223a-8e66-7927-9f89-c782358698c2 @ https://s.nitropay.com/ads-546.js:1
+[ 5554464ms] [INFO] NitroAds: Ad Unit: unauthedvideo, floating, 019e223a-a254-7f0b-bacc-177c37d80818 @ https://s.nitropay.com/ads-546.js:1
+[ 5554619ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://prebid-server.rubiconproject.com/openrtb2/auction:0
+[ 5555520ms] [INFO] NitroAds: Ad Unit: deckheader-floating-ad-desktop, display, 019e223a-a674-7062-8304-77ed180dc9eb @ https://s.nitropay.com/ads-546.js:1
+[ 5580978ms] [INFO] NitroAds: Ad Unit: deck-midbanner-floating-ad-desktop, display, 019e223b-09e6-75f6-97c3-98351d2e7b26 @ https://s.nitropay.com/ads-546.js:1
+[ 5582578ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://cdn.confiant-integrations.net/gptprebidnative/202604301904/wrap.js:82
+[    3484ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cs.lkqd.net/cs?partnerId=59&redirect=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dlkqd_dbm%26google_hm%3D%24%24rawlkqduserid%7Cbase64%24%24:0
+[    3484ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cs.lkqd.net/cs?partnerId=59&partnerUserId=CAESECAVIBUOT0zz3M0ujdH8Yao&gdpr=0&google_cver=1:0
+[  161188ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://sync.search.spotxchange.com/partner?adv_id=7025&gdpr=0&uid=CAESEE9CJlwfNvQjAZ4vaghWock&google_cver=1:0
+[  161188ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://sync.search.spotxchange.com/partner?adv_id=7025&gdpr=0&redir=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dspotxchange_dbm%26google_hm%3D%24SPOTX_BASE64_USER_ID:0
+[  161525ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://sync.search.spotxchange.com/partner?adv_id=7025&gdpr=0&redir=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dspotxchange_dbm%26google_hm%3D%24SPOTX_BASE64_USER_ID:0
+[  161559ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://sync.search.spotxchange.com/partner?adv_id=7025&gdpr=0&uid=CAESEE9CJlwfNvQjAZ4vaghWock&google_cver=1:0
+[  285702ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://tags.bluekai.com/site/2981?redir=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dbluekai%26google_hm%3D%24_BK_UUID_B64:0
+[  316884ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://x.dlx.addthis.com/e/googlegdn_sync?na_exid=CAESELgt8orzNNQF6xBSMdndj-M&gdpr=0&google_cver=1:0
+[  474645ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://s.thebrighttag.com/cs?tp=gcms&gdpr=0&google_gid=CAESEN5SseZx4IPgGiUVEzPHiyQ&google_cver=1:0
+[  632551ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cookie-sync.api.soundcast.fm/v1/esync?url=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dsoundcast_dbm%26google_hm%3D%24UID&gdpr=0:0
+[  695475ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjsvWzWs7yVl95RoV7Nn6TD2aAqGXkPysNXLnUBOXKr7MYWwYfPizKqaM31a32kfriPXK2aJ6XouXW-TYcBKRpNr31Vw6GhC-gDyKgpbAC0JkOv-Om8bA9H6v6MthkJqsk6IeWZgieY2qE4ugoItolb2nI98LCkYvxVw7RCWcLYlop-9NLMEBmWEPhiuZmTIQFgnMYvuJNRuvTIplJtj2u5BRnRRaotqM&sai=AMfl-YRT-_0nFx8SgHGZWdc-vrTfy4z1rnGraMpX0hDYKXspAT8krtL-rs8S9jjHRvkVBDnQLcrjYQ5sWyiTX42yIT1mJKlz_0SzzRMmEzTezKNTtysKlbrlBnDEIrEYvWr-sJ29_E8083CX4IKOgpBKCqOJFnDfl-Gim8OakoHDXPnvpCuDRtNclvWwvIIBhL7ndSfnnjp9lhgFe4M-8TVRLofumLEVfq1Z7thdCz7jTT24mF_CJUhgN-2ixIT9BjyTX_ipRtv2_nNVln5b5FmClmB-3RX4tMWi-wtxiDMrCCZptX1V&sig=Cg0ArKJSzHd8WPmwYrBEEAE&uach_m=%5BUACH%5D&cry=1&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&omid=0&rm=1&ctpt=2&cbvp=2&dett=2&cstd=0&cisv=r20260511.25661&arae=1&ftch=1&adurl=:0
+[    4530ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://partners.tremorhub.com/sync?UIIQ=bc076a2a-f752-461a-aebf-f29cf9f75638:0
+[    4582ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://pxl.iqm.com/i/ck/pubmatic?puid=D550CFC9-AE63-49A9-8164-54037610336B:0
+[ 5583272ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[ 5585158ms] [INFO] NitroAds: Ad Unit: unauthedvideo, floating, 019e223b-1a3a-79ef-b57f-6dfe10cc457c @ https://s.nitropay.com/ads-546.js:1
+[ 5585346ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://prebid-server.rubiconproject.com/openrtb2/auction:0
+[ 5587145ms] [INFO] NitroAds: Ad Unit: deckheader-floating-ad-desktop, display, 019e223b-21fd-7d0f-bd40-0b9f5e9b593c @ https://s.nitropay.com/ads-546.js:1

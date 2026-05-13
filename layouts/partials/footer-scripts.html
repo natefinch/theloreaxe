@@ -34,7 +34,6 @@
     if (tip) return tip;
     tip = document.createElement('div');
     tip.className = 'card-tooltip';
-    tip.innerHTML = '<img alt="">';
     document.body.appendChild(tip);
     return tip;
   }
@@ -43,8 +42,8 @@
     if (!tip) return;
     var vw = window.innerWidth;
     var vh = window.innerHeight;
-    var tw = 260;
-    var th = 364;
+    var tw = tip.offsetWidth || 260;
+    var th = tip.offsetHeight || 364;
     var x = e.clientX + 16;
     var y = e.clientY + 16;
     if (x + tw > vw) x = e.clientX - tw - 16;
@@ -54,33 +53,56 @@
     tip.style.top = y + 'px';
   }
 
+  function showCard(name) {
+    var t = createTooltip();
+    if (cache[name]) {
+      t.innerHTML = cache[name];
+      return;
+    }
+    t.innerHTML = '<img alt="' + name + '" style="width:244px;opacity:0.3" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">';
+
+    // Fetch card JSON to check for faces
+    var url = 'https://api.scryfall.com/cards/named?exact=' + encodeURIComponent(name);
+    fetch(url).then(function(r) {
+      if (!r.ok) {
+        // Try front name only
+        var front = name.split(/\s*\/\/?\s*/)[0];
+        if (front !== name) return fetch('https://api.scryfall.com/cards/named?exact=' + encodeURIComponent(front));
+        throw new Error('not found');
+      }
+      return r;
+    }).then(function(r) { return r.json(); }).then(function(card) {
+      var html = '';
+      if (card.card_faces && card.card_faces.length > 1 && card.card_faces[0].image_uris) {
+        // DFC: show both faces side by side
+        html = '<div class="card-tooltip-faces">';
+        card.card_faces.forEach(function(face) {
+          if (face.image_uris && face.image_uris.normal) {
+            html += '<img src="' + face.image_uris.normal + '" alt="' + (face.name || '') + '">';
+          }
+        });
+        html += '</div>';
+      } else if (card.image_uris && card.image_uris.normal) {
+        html = '<img src="' + card.image_uris.normal + '" alt="' + card.name + '">';
+      }
+      cache[name] = html;
+      t.innerHTML = html;
+    }).catch(function() {
+      // Last resort: direct image URL
+      var fallback = 'https://api.scryfall.com/cards/named?exact=' + encodeURIComponent(name.split(/\s*\/\/?\s*/)[0]) + '&format=image&version=normal';
+      var html = '<img src="' + fallback + '" alt="' + name + '">';
+      cache[name] = html;
+      t.innerHTML = html;
+    });
+  }
+
   document.addEventListener('mouseover', function(e) {
     var ref = e.target.closest('.card-ref');
     if (!ref) return;
     var name = ref.getAttribute('data-card');
     if (!name) return;
     var t = createTooltip();
-    var img = t.querySelector('img');
-    var url = 'https://api.scryfall.com/cards/named?exact='
-      + encodeURIComponent(name) + '&format=image&version=normal';
-    img.alt = name;
-    if (cache[name]) {
-      img.src = cache[name];
-    } else {
-      img.src = url;
-      img.onload = function() { cache[name] = img.src; };
-      img.onerror = function() {
-        // Try front name only for DFCs (handles both // and / separators)
-        var front = name.split(/\s*\/\/?\s*/)[0];
-        if (front !== name) {
-          var fallback = 'https://api.scryfall.com/cards/named?exact='
-            + encodeURIComponent(front) + '&format=image&version=normal';
-          img.onerror = null;
-          img.src = fallback;
-          img.onload = function() { cache[name] = img.src; };
-        }
-      };
-    }
+    showCard(name);
     positionTooltip(e);
     t.classList.add('visible');
   });

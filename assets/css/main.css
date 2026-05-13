@@ -119,7 +119,6 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(147, 180, 131, 0.2);
   opacity: 0;
   transition: opacity 150ms ease;
-  max-width: 244px;
 }
 
 .card-tooltip.visible {
@@ -130,6 +129,16 @@
   display: block;
   width: 244px;
   height: auto;
+  border-radius: 12px;
+}
+
+.card-tooltip-faces {
+  display: flex;
+  gap: 4px;
+}
+
+.card-tooltip-faces img {
+  width: 244px;
   border-radius: 12px;
 }
 
