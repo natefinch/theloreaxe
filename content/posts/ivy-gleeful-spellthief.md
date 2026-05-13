@@ -1,5 +1,5 @@
 ---
-title: "Deck Tech: Ivy Gleeful Spellthief"
+title: "Tempo and Card Advantage in Pauper Blue"
 date: 2026-05-10T09:00:00-04:00
 draft: false
 description: "A unique simic commander that creates a wide diversity in gameplay."

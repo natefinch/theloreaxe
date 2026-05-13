@@ -1,0 +1,3 @@
+{{- $name := .Get 0 -}}
+{{- $display := .Get 1 | default $name -}}
+<span class="card-ref" data-card="{{ $name }}">{{ $display }}</span>

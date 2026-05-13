@@ -1,1 +1,87 @@
-<!-- No scripts needed -->
+<script>
+(function() {
+  // Convert [[Card Name]] to hoverable card references
+  var containers = document.querySelectorAll('.post-body, .project-body, .single-post, .content');
+  containers.forEach(function(el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(node) {
+      if (!node.textContent.includes('[[')) return;
+      var parts = node.textContent.split(/\[\[([^\]]+)\]\]/g);
+      if (parts.length < 2) return;
+      var frag = document.createDocumentFragment();
+      for (var i = 0; i < parts.length; i++) {
+        if (i % 2 === 0) {
+          if (parts[i]) frag.appendChild(document.createTextNode(parts[i]));
+        } else {
+          var span = document.createElement('span');
+          span.className = 'card-ref';
+          span.setAttribute('data-card', parts[i]);
+          span.textContent = parts[i];
+          frag.appendChild(span);
+        }
+      }
+      node.parentNode.replaceChild(frag, node);
+    });
+  });
+
+  // Hover tooltip for .card-ref elements
+  var tip = null;
+  var cache = {};
+
+  function createTooltip() {
+    if (tip) return tip;
+    tip = document.createElement('div');
+    tip.className = 'card-tooltip';
+    tip.innerHTML = '<img alt="">';
+    document.body.appendChild(tip);
+    return tip;
+  }
+
+  function positionTooltip(e) {
+    if (!tip) return;
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+    var tw = 260;
+    var th = 364;
+    var x = e.clientX + 16;
+    var y = e.clientY + 16;
+    if (x + tw > vw) x = e.clientX - tw - 16;
+    if (y + th > vh) y = vh - th - 8;
+    if (y < 8) y = 8;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+
+  document.addEventListener('mouseover', function(e) {
+    var ref = e.target.closest('.card-ref');
+    if (!ref) return;
+    var name = ref.getAttribute('data-card');
+    if (!name) return;
+    var t = createTooltip();
+    var img = t.querySelector('img');
+    var url = 'https://api.scryfall.com/cards/named?exact='
+      + encodeURIComponent(name) + '&format=image&version=normal';
+    img.alt = name;
+    if (cache[name]) {
+      img.src = cache[name];
+    } else {
+      img.src = url;
+      img.onload = function() { cache[name] = img.src; };
+    }
+    positionTooltip(e);
+    t.classList.add('visible');
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (tip && tip.classList.contains('visible')) positionTooltip(e);
+  });
+
+  document.addEventListener('mouseout', function(e) {
+    var ref = e.target.closest('.card-ref');
+    if (!ref) return;
+    if (tip) tip.classList.remove('visible');
+  });
+})();
+</script>
