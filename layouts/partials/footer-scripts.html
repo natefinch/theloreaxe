@@ -87,50 +87,95 @@
 </script>
 <script>
 (function() {
-  var container = document.querySelector('.decklist-container');
-  if (!container) return;
+  var dataEl = document.getElementById('decklist-data');
+  if (!dataEl) return;
 
-  var deckUrl = container.getAttribute('data-deck-url');
-  if (!deckUrl) return;
-
-  var match = deckUrl.match(/\/decks\/([^/?#]+)/);
-  if (!match) return;
-  var deckId = match[1];
+  var raw;
+  try { raw = JSON.parse(dataEl.textContent); } catch(e) { return; }
 
   var commanderEl = document.getElementById('decklist-commander');
   var bodyEl = document.getElementById('decklist-body');
+  var container = document.getElementById('decklist');
   var currentView = 'list';
-  var TYPE_ORDER = ['Battle', 'Planeswalker', 'Creature', 'Sorcery', 'Instant', 'Artifact', 'Enchantment', 'Land'];
+  var TYPE_ORDER = ['Battle','Planeswalker','Creature','Sorcery','Instant','Artifact','Enchantment','Land'];
 
-  var viewBtns = container.querySelectorAll('.decklist-view-btn');
-  viewBtns.forEach(function(btn) {
+  // View toggle
+  container.querySelectorAll('.decklist-view-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       currentView = btn.getAttribute('data-view');
-      viewBtns.forEach(function(b) { b.classList.remove('active'); });
+      container.querySelectorAll('.decklist-view-btn').forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
       bodyEl.setAttribute('data-view', currentView);
     });
   });
 
-  function categorizeCard(card) {
-    var typeLine = (card.type_line || '').toLowerCase();
+  // Parse "1 Card Name (SET) 123" or "Card Name (SET) 123"
+  function parseLine(line) {
+    line = line.trim();
+    if (!line) return null;
+    var m = line.match(/^(\d+)\s+(.+?)\s+\(([^)]+)\)\s+(.+)$/);
+    if (m) return { qty: parseInt(m[1]), name: m[2], set: m[3].toLowerCase(), cn: m[4] };
+    m = line.match(/^(.+?)\s+\(([^)]+)\)\s+(.+)$/);
+    if (m) return { qty: 1, name: m[1], set: m[2].toLowerCase(), cn: m[3] };
+    return null;
+  }
+
+  var cardLines = (Array.isArray(raw.cards) ? raw.cards : (raw.cards || '').split('\n')).map(parseLine).filter(Boolean);
+  var commanders = [];
+  if (raw.commander) {
+    var cmd = parseLine('1 ' + raw.commander);
+    if (cmd) commanders.push(cmd);
+  }
+  if (raw.partner) {
+    var prt = parseLine('1 ' + raw.partner);
+    if (prt) commanders.push(prt);
+  }
+
+  // Build Scryfall collection identifiers
+  var allCards = commanders.concat(cardLines);
+  var identifiers = allCards.map(function(c) {
+    return { set: c.set, collector_number: c.cn };
+  });
+
+  // Scryfall collection API: max 75 per request
+  function fetchCollection(ids) {
+    var batches = [];
+    for (var i = 0; i < ids.length; i += 75) {
+      batches.push(ids.slice(i, i + 75));
+    }
+    return Promise.all(batches.map(function(batch) {
+      return fetch('https://api.scryfall.com/cards/collection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ identifiers: batch })
+      }).then(function(r) { return r.json(); });
+    })).then(function(results) {
+      var cards = [];
+      results.forEach(function(r) {
+        if (r.data) cards = cards.concat(r.data);
+      });
+      return cards;
+    });
+  }
+
+  function scryfallImageUrl(card) {
+    if (card.image_uris && card.image_uris.normal) return card.image_uris.normal;
+    if (card.card_faces && card.card_faces[0] && card.card_faces[0].image_uris) {
+      return card.card_faces[0].image_uris.normal;
+    }
+    return '';
+  }
+
+  function categorizeCard(typeLine) {
+    var tl = (typeLine || '').toLowerCase();
     for (var i = 0; i < TYPE_ORDER.length; i++) {
-      if (typeLine.includes(TYPE_ORDER[i].toLowerCase())) return TYPE_ORDER[i];
+      if (tl.includes(TYPE_ORDER[i].toLowerCase())) return TYPE_ORDER[i];
     }
     return 'Other';
   }
 
-  function scryfallImageUrl(name) {
-    return 'https://api.scryfall.com/cards/named?exact=' + encodeURIComponent(name) + '&format=image&version=normal';
-  }
-
-  function escapeHtml(value) {
-    return String(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
+  function escapeHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
   function renderManaCost(manaCost) {
@@ -151,84 +196,89 @@
     }).join('');
   }
 
-  function normalizeBoard(board) {
-    var cards = [];
-    Object.keys(board || {}).forEach(function(key) {
-      var entry = board[key] || {};
-      var card = entry.card || {};
-      cards.push({
-        name: card.name || '',
-        qty: entry.quantity || 0,
-        manaCost: card.mana_cost || '',
-        cmc: card.cmc || 0,
-        typeLine: card.type_line || '',
-        category: categorizeCard(card)
-      });
+  function buildLookup(scryfallCards) {
+    var lookup = {};
+    scryfallCards.forEach(function(sc) {
+      lookup[sc.set + '|' + sc.collector_number] = sc;
     });
-    return cards;
+    return lookup;
   }
 
-  function renderDecklist(data) {
-    var commanders = data.commanders || {};
+  function render(scryfallCards) {
+    var lookup = buildLookup(scryfallCards);
+
+    // Render commanders
     var cmdHtml = '';
-    Object.keys(commanders).forEach(function(key) {
-      var entry = commanders[key] || {};
-      var card = entry.card || {};
-      if (!card.name) return;
-      var safeCommanderName = escapeHtml(card.name);
+    commanders.forEach(function(c) {
+      var sc = lookup[c.set + '|' + c.cn];
+      var name = sc ? sc.name : c.name;
+      var imgUrl = sc ? scryfallImageUrl(sc) : '';
       cmdHtml += '<div style="display:inline-block;margin:0 8px;">';
-      cmdHtml += '<img src="' + scryfallImageUrl(card.name) + '" alt="' + safeCommanderName + '" loading="lazy">';
-      cmdHtml += '<p class="decklist-commander-name">' + safeCommanderName + '</p>';
+      if (imgUrl) cmdHtml += '<img src="' + imgUrl + '" alt="' + escapeHtml(name) + '" loading="lazy">';
+      cmdHtml += '<p class="decklist-commander-name">' + escapeHtml(name) + '</p>';
       cmdHtml += '</div>';
     });
     commanderEl.innerHTML = cmdHtml;
 
-    var cards = normalizeBoard(data.mainboard);
-    var groups = {};
-    TYPE_ORDER.concat(['Other']).forEach(function(type) { groups[type] = []; });
-    cards.forEach(function(card) {
-      if (!groups[card.category]) groups[card.category] = [];
-      groups[card.category].push(card);
+    // Enrich mainboard cards
+    var enriched = cardLines.map(function(c) {
+      var sc = lookup[c.set + '|' + c.cn];
+      return {
+        name: sc ? sc.name : c.name,
+        qty: c.qty,
+        manaCost: sc ? (sc.mana_cost || (sc.card_faces && sc.card_faces[0] ? sc.card_faces[0].mana_cost : '') || '') : '',
+        cmc: sc ? (sc.cmc || 0) : 0,
+        typeLine: sc ? (sc.type_line || '') : '',
+        category: sc ? categorizeCard(sc.type_line) : 'Other',
+        imageUrl: sc ? scryfallImageUrl(sc) : ''
+      };
     });
 
-    Object.keys(groups).forEach(function(category) {
-      groups[category].sort(function(a, b) {
+    // Group by category
+    var groups = {};
+    TYPE_ORDER.concat(['Other']).forEach(function(t) { groups[t] = []; });
+    enriched.forEach(function(c) {
+      if (!groups[c.category]) groups[c.category] = [];
+      groups[c.category].push(c);
+    });
+
+    Object.keys(groups).forEach(function(cat) {
+      groups[cat].sort(function(a, b) {
         if (a.cmc !== b.cmc) return a.cmc - b.cmc;
         return a.name.localeCompare(b.name);
       });
     });
 
     var html = '';
-    TYPE_ORDER.concat(['Other']).forEach(function(category) {
-      var group = groups[category];
+    TYPE_ORDER.concat(['Other']).forEach(function(cat) {
+      var group = groups[cat];
       if (!group || group.length === 0) return;
+      var totalCards = group.reduce(function(sum, c) { return sum + c.qty; }, 0);
 
-      var totalCards = group.reduce(function(sum, card) { return sum + card.qty; }, 0);
       html += '<div class="decklist-group">';
-      html += '<div class="decklist-group-header">' + category;
+      html += '<div class="decklist-group-header">' + cat;
       html += ' <span class="decklist-group-count">(' + totalCards + ')</span></div>';
 
       html += '<ul class="decklist-list">';
-      group.forEach(function(card) {
-        var safeCardName = escapeHtml(card.name);
-        html += '<li class="decklist-list-item card-ref-wrap">';
-        html += '<span class="decklist-qty">' + card.qty + '</span>';
-        html += '<span class="decklist-card-name card-ref" data-card="' + safeCardName + '">' + safeCardName + '</span>';
-        html += '<span class="decklist-mana">' + renderManaCost(card.manaCost) + '</span>';
+      group.forEach(function(c) {
+        html += '<li class="decklist-list-item">';
+        html += '<span class="decklist-qty">' + c.qty + '</span>';
+        html += '<span class="decklist-card-name card-ref" data-card="' + escapeHtml(c.name) + '">' + escapeHtml(c.name) + '</span>';
+        html += '<span class="decklist-mana">' + renderManaCost(c.manaCost) + '</span>';
         html += '</li>';
       });
       html += '</ul>';
 
       html += '<div class="decklist-visual">';
-      group.forEach(function(card) {
-        var safeCardName = escapeHtml(card.name);
-        for (var i = 0; i < card.qty; i++) {
+      group.forEach(function(c) {
+        for (var i = 0; i < c.qty; i++) {
           html += '<div class="decklist-visual-card">';
-          html += '<img src="' + scryfallImageUrl(card.name) + '" alt="' + safeCardName + '" loading="lazy">';
+          if (c.imageUrl) html += '<img src="' + c.imageUrl + '" alt="' + escapeHtml(c.name) + '" loading="lazy">';
           html += '</div>';
         }
       });
       html += '</div>';
+
       html += '</div>';
     });
 
@@ -236,28 +286,11 @@
     bodyEl.setAttribute('data-view', currentView);
   }
 
-  // Try local cached data first, then fall back to Moxfield API
-  var localUrl = '/decks/' + deckId + '.json';
-  var apiUrl = 'https://api2.moxfield.com/v3/decks/all/' + deckId;
-
-  fetch(localUrl)
-    .then(function(res) {
-      if (!res.ok) throw new Error('No local data');
-      return res.json();
-    })
-    .then(renderDecklist)
-    .catch(function() {
-      // Fall back to Moxfield API (may be blocked by CORS)
-      fetch(apiUrl)
-        .then(function(res) {
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          return res.json();
-        })
-        .then(renderDecklist)
-        .catch(function(err) {
-          console.warn('Could not load decklist:', err);
-          bodyEl.innerHTML = '<p class="decklist-error">Could not load decklist automatically. <a href="' + deckUrl + '" target="_blank" rel="noopener">View it on Moxfield →</a></p>';
-        });
+  fetchCollection(identifiers)
+    .then(render)
+    .catch(function(err) {
+      console.warn('Could not load card data:', err);
+      bodyEl.innerHTML = '<p class="decklist-error">Could not load card data from Scryfall.</p>';
     });
 })();
 </script>

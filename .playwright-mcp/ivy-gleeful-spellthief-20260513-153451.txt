@@ -1,0 +1,77 @@
+1 Alchemist's Refuge
+1 Ancestral Mask
+1 Aqueous Form
+1 Arlinn, Voice of the Pack
+1 Aspect of Hydra
+1 Aura Gnarlid
+1 Auspicious Starrix
+1 Barkchannel Pathway
+1 Bear Umbra
+1 Beast Within
+1 Berserk
+1 Birds of Paradise
+1 Boar Umbra
+1 Cackling Counterpart
+1 Canopy Cover
+1 Cerulean Wisps
+1 Combat Research
+1 Command Tower
+1 Curiosity
+1 Curse of the Swine
+1 Dreamtail Heron
+1 Drift of Phantasms
+1 Elvish Mystic
+1 Esior, Wardwing Familiar
+1 Fertile Ground
+14 Forest
+1 Fyndhorn Elves
+1 Gaea's Gift
+1 Gatherer of Graces
+1 Gemrazer
+1 Glowstone Recluse
+1 Gnarlback Rhino
+1 Hero of Leina Tower
+1 Hinterland Harbor
+1 Invasion of Arcavios
+1 Invisible Stalker
+1 Irenicus's Vile Duplication
+15 Island
+1 Keen Sense
+1 Legolas's Quick Reflexes
+1 Llanowar Elves
+1 Maraleaf Pixie
+1 Migratory Greathorn
+1 Nature's Claim
+1 Nerd Rage
+1 One with Nature
+1 Parcelbeast
+1 Pongify
+1 Quasiduplicate
+1 Rapid Hybridization
+1 Reclamation Sage
+1 Repudiate/Replicate
+1 Rune of Might
+1 Sawtusk Demolisher
+1 Sea-Dasher Octopus
+1 Season of Growth
+1 Setessan Champion
+1 Shielding Plax
+1 Sigil of Sleep
+1 Simic Charm
+1 Sixth Sense
+1 Spellwild Ouphe
+1 Stormchaser Drake
+1 Tamiyo's Safekeeping
+1 Tangled Florahedron
+1 Triton Fortune Hunter
+1 Twinning Staff
+1 Tyvar's Stand
+1 Utopia Sprawl
+1 Vastwood Fortification
+1 Viridescent Wisps
+1 Vow of Wildness
+1 Wild Growth
+1 Yavimaya Enchantress
+1 Yavimaya, Cradle of Growth
+
+1 Ivy, Gleeful Spellthief

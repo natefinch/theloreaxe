@@ -1,11 +1,89 @@
----
-title: "Ivy Gleeful Spellthief"
-date: 2026-05-10T09:00:00-04:00
-draft: false
-description: "A unique simic commander that creates a wide diversity in gameplay."
-tags: ["Commander", "Deck Tech"]
-decklist: "https://moxfield.com/decks/tUf66lw9ik6boigQH_d4Qw"
----
++++
+title = "Ivy Gleeful Spellthief"
+date = 2026-05-10T09:00:00-04:00
+draft = false
+description = "A unique simic commander that creates a wide diversity in gameplay."
+tags = ["Commander", "Deck Tech"]
+decklist = "https://moxfield.com/decks/tUf66lw9ik6boigQH_d4Qw"
+commander = "Ivy, Gleeful Spellthief (DMU) 201"
+cards = """
+1 Alchemist's Refuge (LCC) 318
+1 Ancestral Mask (PLST) EMA-157
+1 Aqueous Form (CMR) 56
+1 Arlinn, Voice of the Pack (PLST) WAR-150
+1 Aspect of Hydra (BNG) 117
+1 Aura Gnarlid (ROE) 175
+1 Auspicious Starrix (IKO) 144
+1 Barkchannel Pathway / Tidechannel Pathway (PLST) KHM-251
+1 Bear Umbra (NEC) 113
+1 Beast Within (PLST) NPH-103
+1 Berserk (CN2) 175
+1 Birds of Paradise (SLD) 176
+1 Boar Umbra (ROE) 179
+1 Cackling Counterpart (ISD) 46
+1 Canopy Cover (WWK) 98
+1 Cerulean Wisps (SHM) 31
+1 Combat Research (DMU) 44
+1 Command Tower (40K) 270
+1 Curiosity (JMP) 147
+1 Curse of the Swine (KHC) 37
+1 Dreamtail Heron (IKO) 284
+1 Drift of Phantasms (RAV) 46
+1 Elvish Mystic (M15) 173
+1 Esior, Wardwing Familiar (CMR) 67
+1 Fertile Ground (INV) 188
+14 Forest (SNC) 270
+1 Fyndhorn Elves (CMR) 228
+1 Gaea's Gift (BRO) 182
+1 Gatherer of Graces (GPT) 85
+1 Gemrazer (IKO) 155
+1 Glowstone Recluse (IKO) 156
+1 Gnarlback Rhino (2X2) 148
+1 Hero of Leina Tower (UMA) 169
+1 Hinterland Harbor (DMR) 396
+1 Invasion of Arcavios / Invocation of the Founders (MOM) 61
+1 Invisible Stalker (ISD) 60
+1 Irenicus's Vile Duplication (CLB) 78
+15 Island (ORI) 259
+1 Keen Sense (TSR) 213
+1 Legolas's Quick Reflexes (LTC) 493
+1 Llanowar Elves (M11) 184
+1 Maraleaf Pixie (ELD) 196
+1 Migratory Greathorn (IKO) 165
+1 Nature's Claim (EMA) 178
+1 Nerd Rage (PIP) 34
+1 One with Nature (SCG) 125
+1 Parcelbeast (IKO) 199
+1 Pongify (PLST) PLC-44
+1 Quasiduplicate (GRN) 51
+1 Rapid Hybridization (C21) 126
+1 Reclamation Sage (CMR) 248
+1 Repudiate / Replicate (RNA) 227
+1 Rune of Might (KHM) 191
+1 Sawtusk Demolisher (C20) 64
+1 Sea-Dasher Octopus (PIKO) 66p
+1 Season of Growth (M20) 191
+1 Setessan Champion (THB) 198
+1 Shielding Plax (AFC) 192
+1 Sigil of Sleep (DDI) 25
+1 Simic Charm (CMR) 451
+1 Sixth Sense (AKH) 187
+1 Spellwild Ouphe (FUT) 151
+1 Stormchaser Drake (VOW) 82
+1 Tamiyo's Safekeeping (NEO) 211
+1 Tangled Florahedron / Tangled Vale (ZNR) 211
+1 Triton Fortune Hunter (THS) 69
+1 Twinning Staff (C20) 70
+1 Tyvar's Stand (ONE) 190
+1 Utopia Sprawl (A25) 192
+1 Vastwood Fortification / Vastwood Thicket (ZNR) 216
+1 Viridescent Wisps (SHM) 132
+1 Vow of Wildness (CMR) 262
+1 Wild Growth (DMR) 352
+1 Yavimaya Enchantress (8ED) 290
+1 Yavimaya, Cradle of Growth (MH2) 261
+"""
++++
 
 ## Overview
 
