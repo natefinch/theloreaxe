@@ -178,21 +178,19 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  function frontName(name) {
+    var idx = name.indexOf(' // ');
+    return idx > -1 ? name.substring(0, idx) : name;
+  }
+
   function renderManaCost(manaCost) {
     if (!manaCost) return '';
     var symbols = manaCost.match(/\{([^}]+)\}/g) || [];
     return symbols.map(function(sym) {
       var s = sym.replace(/[{}]/g, '').toUpperCase();
-      var cls = 'mana-sym ';
-      if (s === 'W') cls += 'mana-w';
-      else if (s === 'U') cls += 'mana-u';
-      else if (s === 'B') cls += 'mana-b';
-      else if (s === 'R') cls += 'mana-r';
-      else if (s === 'G') cls += 'mana-g';
-      else if (s === 'C') cls += 'mana-c';
-      else if (s === 'X') cls += 'mana-x';
-      else cls += 'mana-generic';
-      return '<span class="' + cls + '">' + s + '</span>';
+      // mana-font uses ms-{symbol} classes, lowercased
+      var code = s.toLowerCase().replace('/', '');
+      return '<i class="ms ms-cost ms-shadow ms-' + code + '" aria-hidden="true"></i>';
     }).join('');
   }
 
@@ -261,9 +259,10 @@
 
       html += '<ul class="decklist-list">';
       group.forEach(function(c) {
+        var displayName = frontName(c.name);
         html += '<li class="decklist-list-item">';
         html += '<span class="decklist-qty">' + c.qty + '</span>';
-        html += '<span class="decklist-card-name card-ref" data-card="' + escapeHtml(c.name) + '">' + escapeHtml(c.name) + '</span>';
+        html += '<span class="decklist-card-name card-ref" data-card="' + escapeHtml(c.name) + '">' + escapeHtml(displayName) + '</span>';
         html += '<span class="decklist-mana">' + renderManaCost(c.manaCost) + '</span>';
         html += '</li>';
       });

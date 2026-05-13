@@ -987,28 +987,9 @@
       flex-shrink: 0;
     }
 
-    .mana-sym {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      font-size: 0.65rem;
-      font-weight: 700;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1;
-      border: 1px solid rgba(0,0,0,0.3);
+    .decklist-mana .ms {
+      font-size: 0.85rem;
     }
-
-    .mana-w { background: #f0f2c0; color: #2c2000; }
-    .mana-u { background: #3b6ba0; color: #fff; }
-    .mana-b { background: #383431; color: #fff; }
-    .mana-r { background: #c6553e; color: #fff; }
-    .mana-g { background: #3d684b; color: #fff; }
-    .mana-c { background: #beb9b2; color: #1a1a1a; }
-    .mana-generic { background: #8a8a8a; color: #fff; }
-    .mana-x { background: #8a8a8a; color: #fff; }
 
     /* Visual spoiler view */
     .decklist-visual {
