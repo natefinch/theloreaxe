@@ -79,8 +79,11 @@
 .single-post .post-body a {
   color: var(--primary);
   text-decoration: underline;
-  text-underline-offset: 0.15em;
-  text-decoration-color: rgba(106, 175, 123, 0.4);
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(106, 175, 123, 0.5);
+  text-decoration-thickness: 1.5px;
+  font-weight: 500;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
 }
 
 .single-post .post-body a:hover {
@@ -108,6 +111,21 @@
 
 .project-page .project-body p {
   margin: 0 0 1.2rem;
+}
+
+.project-page .project-body a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(106, 175, 123, 0.5);
+  text-decoration-thickness: 1.5px;
+  font-weight: 500;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.project-page .project-body a:hover {
+  color: var(--glow);
+  text-decoration-color: var(--glow);
 }
 
     :root {
