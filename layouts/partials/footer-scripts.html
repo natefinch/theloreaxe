@@ -61,8 +61,7 @@
     if (!name) return;
     var t = createTooltip();
     var img = t.querySelector('img');
-    // Use fuzzy match which handles partial names and DFCs better
-    var url = 'https://api.scryfall.com/cards/named?fuzzy='
+    var url = 'https://api.scryfall.com/cards/named?exact='
       + encodeURIComponent(name) + '&format=image&version=normal';
     img.alt = name;
     if (cache[name]) {
@@ -71,11 +70,14 @@
       img.src = url;
       img.onload = function() { cache[name] = img.src; };
       img.onerror = function() {
-        // Try with just the front name
-        var front = name.indexOf(' // ') > -1 ? name.substring(0, name.indexOf(' // ')) : name;
+        // Try front name only for DFCs (handles both // and / separators)
+        var front = name.split(/\s*\/\/?\s*/)[0];
         if (front !== name) {
-          img.src = 'https://api.scryfall.com/cards/named?fuzzy='
+          var fallback = 'https://api.scryfall.com/cards/named?exact='
             + encodeURIComponent(front) + '&format=image&version=normal';
+          img.onerror = null;
+          img.src = fallback;
+          img.onload = function() { cache[name] = img.src; };
         }
       };
     }
