@@ -143,8 +143,9 @@
   var TYPE_ORDER = ['Battle','Planeswalker','Creature','Sorcery','Instant','Artifact','Enchantment','Land'];
 
   // Parse "1 Card Name (SET) 123" or "Card Name (SET) 123"
+  // Strips trailing *F* (foil marker) from Moxfield export
   function parseLine(line) {
-    line = line.trim();
+    line = line.trim().replace(/\s*\*F\*$/, '');
     if (!line) return null;
     var m = line.match(/^(\d+)\s+(.+?)\s+\(([^)]+)\)\s+(.+)$/);
     if (m) return { qty: parseInt(m[1]), name: m[2], set: m[3].toLowerCase(), cn: m[4] };
