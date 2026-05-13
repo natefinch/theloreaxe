@@ -316,6 +316,32 @@
       font-variant: small-caps;
     }
 
+    /* Mobile nav - hidden on desktop */
+    .mobile-nav {
+      display: none;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 6px 20px;
+      flex-wrap: wrap;
+    }
+
+    .mobile-nav a {
+      color: var(--text);
+      font-size: 0.9rem;
+      padding: 4px 0;
+      transition: color 180ms ease;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--glow);
+    }
+
     .top-ornament {
       display: flex;
       align-items: center;
@@ -810,34 +836,11 @@
       }
 
       .sidebar-inner {
-        position: static;
-        padding: 20px 18px;
+        display: none;
       }
 
-      .sidebar nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px 18px;
-      }
-
-      .sidebar nav li + li,
-      .sidebar-projects li + li {
-        margin-top: 0;
-      }
-
-      .sidebar-section {
-        margin-top: 18px;
-        padding-top: 16px;
-      }
-
-      .sidebar-projects ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px 18px;
-      }
-
-      .bio {
-        max-width: none;
+      .mobile-nav {
+        display: block;
       }
 
       .content {
@@ -907,6 +910,30 @@
       border-left: 2px solid var(--gold);
       box-shadow: var(--shadow);
       backdrop-filter: blur(8px);
+    }
+
+    /* Decklist toggle button */
+    .decklist-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+    }
+
+    .decklist-toggle-icon {
+      font-size: 0.75rem;
+      color: var(--gold);
+      transition: transform 200ms ease;
+    }
+
+    .decklist-toggle[aria-expanded="true"] .decklist-toggle-icon {
+      transform: rotate(90deg);
     }
 
     .decklist-title {
