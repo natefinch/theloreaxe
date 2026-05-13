@@ -1,0 +1,7 @@
+<figure class="video-embed">
+  <video controls playsinline preload="metadata" style="width:100%;max-width:720px;border-radius:12px;border:1px solid var(--border);">
+    <source src="{{ .Get "src" }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  {{ with .Get "title" }}<figcaption style="color:var(--muted);font-size:0.85rem;margin-top:8px;">{{ . }}</figcaption>{{ end }}
+</figure>
