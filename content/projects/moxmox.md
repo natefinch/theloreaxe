@@ -7,19 +7,19 @@ icon: '<svg viewBox="0 0 64 64" width="32" height="32" fill="none" xmlns="http:/
 
 Moxfield has a great playtest feature — but it's single-player. MoxMox changes that. It's a browser extension that turns Moxfield's playtest page into a real multiplayer game table, syncing everything between players in real time.
 
-Play Commander with friends across the internet, or try DanDan with a shared library. No extra apps, no screen sharing, no awkward workarounds. Just open a deck, create a room, and play.
-
-{{< video src="https://github.com/user-attachments/assets/c510632e-7dfd-4172-a3ee-634404ee0ef1" title="Traditional multiplayer game on Moxfield with MoxMox" >}}
+Play Commander with friends across the internet, or try DanDan with a shared library. No signup, no accounts. Just open a deck, share a code, and play.
 
 ## Two Ways to Play
 
 ### Traditional Mode (Commander, 1v1, etc.)
 
-Each player brings their own deck. MoxMox syncs life totals, hand counts, and graveyards across 2–4 players. Create a room, share a short code, and everyone's connected.
+MoxMox solves the most annoying problems of playing on video sites like Spelltable - MoxMox shows your opponents' hand size and lets you view their graveyards and exile. You can even pass control of one of your cards to an opponent, and it'll appear on their battlefield in the exact same state it was on yours... if it gets destroyed, it reappears in your graveyard. Need to reveal your hand to a player without showing the whole table? You can do that, too. 
+
+{{< video src="https://github.com/user-attachments/assets/c510632e-7dfd-4172-a3ee-634404ee0ef1" title="Traditional multiplayer game on Moxfield with MoxMox" >}}
 
 ### Shared Deck Mode (DanDan, and other shared-deck formats)
 
-Both players share the same library, graveyard, and exile zone — perfect for DanDan and other shared-deck formats. One player creates the room and sends an invite link. The entire game state stays in sync.
+DanDan is super fun, but is really hard to play online, because of the nature of the shared deck format. MoxMox makes it easy. Start a game, share a link, and you and your opponent enter a game with shared library, graveyard, and exile, plus mirrored battlefield so you don't even need screensharing.
 
 {{< video src="https://github.com/user-attachments/assets/3e9a82cb-7dec-487e-96cc-f2c6b8189d48" title="Shared deck DanDan game on Moxfield with MoxMox" >}}
 
