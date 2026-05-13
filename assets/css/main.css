@@ -981,10 +981,12 @@
       display: inline-flex;
       gap: 1px;
       flex-shrink: 0;
+      flex-wrap: wrap;
+      max-width: 90px;
     }
 
     .decklist-mana .ms {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
 
     @media (max-width: 640px) {
