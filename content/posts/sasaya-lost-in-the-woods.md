@@ -4,7 +4,7 @@ date = 2026-05-05T09:00:00-04:00
 draft = false
 description = "Can you win with 50+ basic forests. Oh yes."
 tags = ["Commander", "Deck Tech"]
-decklist = ""
+decklist = "https://moxfield.com/decks/a66VxyEi0U2u01-vB2JIXQ"
 commander = "Sasaya, Orochi Ascendant / Sasaya's Essence (SOK) 145"
 cards = """
 1 Abundance (40K) 210
