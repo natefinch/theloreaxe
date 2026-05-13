@@ -831,48 +831,10 @@
       backdrop-filter: blur(8px);
     }
 
-    .decklist-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
     .decklist-title {
-      margin: 0;
+      margin: 0 0 16px;
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.1rem;
-    }
-
-    .decklist-views {
-      display: flex;
-      gap: 4px;
-      background: rgba(0,0,0,0.2);
-      border-radius: 8px;
-      padding: 3px;
-    }
-
-    .decklist-view-btn {
-      background: none;
-      border: none;
-      color: var(--muted);
-      padding: 6px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 150ms ease;
-    }
-
-    .decklist-view-btn.active {
-      background: var(--secondary);
-      color: var(--text);
-    }
-
-    .decklist-view-btn:hover:not(.active) {
-      color: var(--text);
     }
 
     .decklist-loading {
@@ -991,66 +953,9 @@
       font-size: 0.85rem;
     }
 
-    /* Visual spoiler view */
-    .decklist-visual {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 0;
-      padding: 4px 42px 8px 0;
-    }
-
-    .decklist-visual-card {
-      width: 75px;
-      margin-right: -42px;
-      transition: transform 200ms ease, z-index 0ms;
-      position: relative;
-      z-index: 1;
-      cursor: pointer;
-    }
-
-    .decklist-visual-card:hover {
-      transform: scale(2.8);
-      z-index: 100;
-    }
-
-    .decklist-visual-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      display: block;
-    }
-
-    .decklist-visual-card:last-child {
-      margin-right: 0;
-    }
-
-    /* Hide inactive view */
-    .decklist-body[data-view="visual"] .decklist-list {
-      display: none;
-    }
-
-    .decklist-body[data-view="list"] .decklist-visual {
-      display: none;
-    }
-
-    /* Make card items in list view also trigger hover previews */
-    .decklist-list-item .decklist-card-name {
-      position: relative;
-    }
-
     @media (max-width: 640px) {
       .sidebar-decklist {
         padding: 14px;
-      }
-
-      .decklist-visual-card {
-        width: 65px;
-        margin-right: -36px;
-      }
-
-      .decklist-visual-card:hover {
-        transform: scale(2.2);
       }
 
       .decklist-commander img {

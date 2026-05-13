@@ -95,19 +95,7 @@
 
   var commanderEl = document.getElementById('decklist-commander');
   var bodyEl = document.getElementById('decklist-body');
-  var container = document.getElementById('decklist');
-  var currentView = 'list';
   var TYPE_ORDER = ['Battle','Planeswalker','Creature','Sorcery','Instant','Artifact','Enchantment','Land'];
-
-  // View toggle
-  container.querySelectorAll('.decklist-view-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      currentView = btn.getAttribute('data-view');
-      container.querySelectorAll('.decklist-view-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      bodyEl.setAttribute('data-view', currentView);
-    });
-  });
 
   // Parse "1 Card Name (SET) 123" or "Card Name (SET) 123"
   function parseLine(line) {
@@ -227,8 +215,7 @@
         manaCost: sc ? (sc.mana_cost || (sc.card_faces && sc.card_faces[0] ? sc.card_faces[0].mana_cost : '') || '') : '',
         cmc: sc ? (sc.cmc || 0) : 0,
         typeLine: sc ? (sc.type_line || '') : '',
-        category: sc ? categorizeCard(sc.type_line) : 'Other',
-        imageUrl: sc ? scryfallImageUrl(sc) : ''
+        category: sc ? categorizeCard(sc.type_line) : 'Other'
       };
     });
 
@@ -268,21 +255,10 @@
       });
       html += '</ul>';
 
-      html += '<div class="decklist-visual">';
-      group.forEach(function(c) {
-        for (var i = 0; i < c.qty; i++) {
-          html += '<div class="decklist-visual-card">';
-          if (c.imageUrl) html += '<img src="' + c.imageUrl + '" alt="' + escapeHtml(c.name) + '" loading="lazy">';
-          html += '</div>';
-        }
-      });
-      html += '</div>';
-
       html += '</div>';
     });
 
     bodyEl.innerHTML = html;
-    bodyEl.setAttribute('data-view', currentView);
   }
 
   fetchCollection(identifiers)
