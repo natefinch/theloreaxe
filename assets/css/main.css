@@ -134,7 +134,7 @@
 
 .card-tooltip-faces {
   display: flex;
-  gap: 4px;
+  gap: 0;
 }
 
 .card-tooltip-faces img {

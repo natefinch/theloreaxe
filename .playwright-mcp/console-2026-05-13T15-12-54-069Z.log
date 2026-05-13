@@ -4821,3 +4821,43 @@ https://goo.gle/gpt-message#155 @ https://securepubads.g.doubleclick.net/pagead/
 [ 5585158ms] [INFO] NitroAds: Ad Unit: unauthedvideo, floating, 019e223b-1a3a-79ef-b57f-6dfe10cc457c @ https://s.nitropay.com/ads-546.js:1
 [ 5585346ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://prebid-server.rubiconproject.com/openrtb2/auction:0
 [ 5587145ms] [INFO] NitroAds: Ad Unit: deckheader-floating-ad-desktop, display, 019e223b-21fd-7d0f-bd40-0b9f5e9b593c @ https://s.nitropay.com/ads-546.js:1
+[ 5611117ms] [ERROR] Access to fetch at 'https://a.nitropay.com/v4/openrtb2' from origin 'https://moxfield.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://moxfield.com/decks/tUf66lw9ik6boigQH_d4Qw:0
+[ 5611117ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://a.nitropay.com/v4/openrtb2:0
+[ 5612592ms] [INFO] NitroAds: Ad Unit: deck-midbanner-floating-ad-desktop, display, 019e223b-8565-7f39-8743-6bd6eb1f3a22 @ https://s.nitropay.com/ads-546.js:1
+[ 5615830ms] [INFO] NitroAds: Ad Unit: unauthedvideo, floating, 019e223b-920a-77ac-97c6-fb321fff7423 @ https://s.nitropay.com/ads-546.js:1
+[ 5616010ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://prebid-server.rubiconproject.com/openrtb2/auction:0
+[ 5618209ms] [INFO] NitroAds: Ad Unit: deckheader-floating-ad-desktop, display, 019e223b-9b56-71f5-83dc-3ee9a3d4412b @ https://s.nitropay.com/ads-546.js:1
+[ 5644294ms] [INFO] NitroAds: Ad Unit: deck-midbanner-floating-ad-desktop, display, 019e223c-013b-7466-b1e0-7b50153893a8 @ https://s.nitropay.com/ads-546.js:1
+[ 5645984ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://cdn.confiant-integrations.net/gptprebidnative/202604301904/wrap.js:82
+[    4530ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://partners.tremorhub.com/sync?UIIQ=bc076a2a-f752-461a-aebf-f29cf9f75638:0
+[    4582ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://pxl.iqm.com/i/ck/pubmatic?puid=D550CFC9-AE63-49A9-8164-54037610336B:0
+[ 5646478ms] [INFO] NitroAds: Ad Unit: unauthedvideo, floating, 019e223c-09c2-7a95-bd03-a4e4346849a7 @ https://s.nitropay.com/ads-546.js:1
+[ 5646622ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://prebid-server.rubiconproject.com/openrtb2/auction:0
+[ 5649738ms] [INFO] NitroAds: Ad Unit: deckheader-floating-ad-desktop, display, 019e223c-167f-7c68-8578-7e518385f562 @ https://s.nitropay.com/ads-546.js:1
+[ 5651451ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://cdn.confiant-integrations.net/gptprebidnative/202604301904/wrap.js:82
+[ 5651773ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://onetag-sys.com/analytics/:0
+[ 5651857ms] Uncaught (in promise) TypeError: Failed to fetch
+    at t.sendWithFetch (https://onetag-sys.com/static/BannerAdBannerPlacement.js?v=0.4.43:0:7185)
+    at t.sendInternal (https://onetag-sys.com/static/BannerAdBannerPlacement.js?v=0.4.43:0:6865)
+    at d (https://onetag-sys.com/static/BannerAdBannerPlacement.js?v=0.4.43:0:6693)
+    at t.send (https://onetag-sys.com/static/BannerAdBannerPlacement.js?v=0.4.43:0:6607)
+    at t.post (https://onetag-sys.com/static/BannerAdBannerPlacement.js?v=0.4.43:0:8677)
+    at t.log (https://onetag-sys.com/static/BannerAdBannerPlacement.js?v=0.4.43:0:34377)
+    at <anonymous> (https://onetag-sys.com/static/BannerAdBannerPlacement.js?v=0.4.43:0:32512)
+[    3484ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cs.lkqd.net/cs?partnerId=59&redirect=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dlkqd_dbm%26google_hm%3D%24%24rawlkqduserid%7Cbase64%24%24:0
+[    3484ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cs.lkqd.net/cs?partnerId=59&partnerUserId=CAESECAVIBUOT0zz3M0ujdH8Yao&gdpr=0&google_cver=1:0
+[  161188ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://sync.search.spotxchange.com/partner?adv_id=7025&gdpr=0&uid=CAESEE9CJlwfNvQjAZ4vaghWock&google_cver=1:0
+[  161188ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://sync.search.spotxchange.com/partner?adv_id=7025&gdpr=0&redir=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dspotxchange_dbm%26google_hm%3D%24SPOTX_BASE64_USER_ID:0
+[  161525ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://sync.search.spotxchange.com/partner?adv_id=7025&gdpr=0&redir=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dspotxchange_dbm%26google_hm%3D%24SPOTX_BASE64_USER_ID:0
+[  161559ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://sync.search.spotxchange.com/partner?adv_id=7025&gdpr=0&uid=CAESEE9CJlwfNvQjAZ4vaghWock&google_cver=1:0
+[  285702ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://tags.bluekai.com/site/2981?redir=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dbluekai%26google_hm%3D%24_BK_UUID_B64:0
+[  316884ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://x.dlx.addthis.com/e/googlegdn_sync?na_exid=CAESELgt8orzNNQF6xBSMdndj-M&gdpr=0&google_cver=1:0
+[  474645ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://s.thebrighttag.com/cs?tp=gcms&gdpr=0&google_gid=CAESEN5SseZx4IPgGiUVEzPHiyQ&google_cver=1:0
+[  632551ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://cookie-sync.api.soundcast.fm/v1/esync?url=https%3A%2F%2Fcm.g.doubleclick.net%2Fpixel%3Fgoogle_nid%3Dsoundcast_dbm%26google_hm%3D%24UID&gdpr=0:0
+[  695475ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://googleads4.g.doubleclick.net/pcs/view?xai=AKAOjsvWzWs7yVl95RoV7Nn6TD2aAqGXkPysNXLnUBOXKr7MYWwYfPizKqaM31a32kfriPXK2aJ6XouXW-TYcBKRpNr31Vw6GhC-gDyKgpbAC0JkOv-Om8bA9H6v6MthkJqsk6IeWZgieY2qE4ugoItolb2nI98LCkYvxVw7RCWcLYlop-9NLMEBmWEPhiuZmTIQFgnMYvuJNRuvTIplJtj2u5BRnRRaotqM&sai=AMfl-YRT-_0nFx8SgHGZWdc-vrTfy4z1rnGraMpX0hDYKXspAT8krtL-rs8S9jjHRvkVBDnQLcrjYQ5sWyiTX42yIT1mJKlz_0SzzRMmEzTezKNTtysKlbrlBnDEIrEYvWr-sJ29_E8083CX4IKOgpBKCqOJFnDfl-Gim8OakoHDXPnvpCuDRtNclvWwvIIBhL7ndSfnnjp9lhgFe4M-8TVRLofumLEVfq1Z7thdCz7jTT24mF_CJUhgN-2ixIT9BjyTX_ipRtv2_nNVln5b5FmClmB-3RX4tMWi-wtxiDMrCCZptX1V&sig=Cg0ArKJSzHd8WPmwYrBEEAE&uach_m=%5BUACH%5D&cry=1&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&omid=0&rm=1&ctpt=2&cbvp=2&dett=2&cstd=0&cisv=r20260511.25661&arae=1&ftch=1&adurl=:0
+[    4530ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://partners.tremorhub.com/sync?UIIQ=bc076a2a-f752-461a-aebf-f29cf9f75638:0
+[    4582ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://pxl.iqm.com/i/ck/pubmatic?puid=D550CFC9-AE63-49A9-8164-54037610336B:0
+[ 5652011ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    4391ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://match.prod.bidr.io/cookie-sync/rp?bee_sync_partners=rp&gdpr_consent=1---:0
+[ 5655154ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://cs.admanmedia.com/73c1e1bfc3bde354d60b80e601ae3914.gif?puid=[UID]&redir=https%3A%2F%2Fonetag-sys.com%2Fmatch%2F%3Fint_id%3D164%26gdpr%3D0%26gdpr_consent%3D%26uid%3D%5BUID%5D&gdpr=0&gdpr_consent=&ccpa=&coppa=:0
+[ 5676003ms] [INFO] NitroAds: Ad Unit: deck-midbanner-floating-ad-desktop, display, 019e223c-7d17-7ec5-b232-ac9b1f92cde7 @ https://s.nitropay.com/ads-546.js:1
