@@ -1,0 +1,59 @@
+{{ define "main" }}
+<header class="intro">
+  <span class="eyebrow">{{ .Site.Params.eyebrow | default "Lantern-light strategy" }}</span>
+  <h2>{{ .Site.Params.headline }}</h2>
+  <p>{{ .Site.Params.subheadline }}</p>
+</header>
+
+<section id="posts" aria-labelledby="posts-title">
+  <h2 id="posts-title" class="section-label" style="margin-bottom: 0;">Latest Posts</h2>
+  <div class="post-list">
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    {{ range $index, $post := first 10 $posts }}
+    <article class="post{{ if eq $index 0 }} featured{{ end }}">
+      {{ if gt $index 0 }}
+      <div class="post-divider" aria-hidden="true"><span></span></div>
+      {{ end }}
+      <div class="meta">
+        {{ if eq $index 0 }}<span class="featured-badge">✦ Latest</span>{{ end }}
+        <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+        <div class="tags" aria-label="Tags">
+          {{ range .Params.tags }}
+          <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p class="excerpt">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 200 }}{{ end }}</p>
+      <a class="read-more" href="{{ .RelPermalink }}">Read more <span aria-hidden="true">→</span></a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+{{ $projects := where .Site.RegularPages "Section" "projects" }}
+{{ if $projects }}
+<section class="projects" id="projects" aria-labelledby="projects-title">
+  <span class="eyebrow">Built for players</span>
+  <h2 id="projects-title">Projects</h2>
+  <div class="project-cards">
+    {{ range $projects }}
+    <article class="project-card" id="{{ .File.BaseFileName }}">
+      <div class="project-icon" aria-hidden="true">
+        {{ .Params.icon | safeHTML }}
+      </div>
+      <div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description }}</p>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<footer>
+  <p>{{ .Site.Params.disclaimer | safeHTML }}</p>
+  <p>© {{ now.Year }} {{ .Site.Title }}</p>
+</footer>
+{{ end }}

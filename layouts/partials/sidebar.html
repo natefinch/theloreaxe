@@ -1,0 +1,31 @@
+<aside class="sidebar">
+  <div class="sidebar-inner">
+    <div class="sidebar-logo">
+      <a href="{{ "/" | relURL }}">
+        <img src="{{ "logo.png" | relURL }}" alt="{{ .Site.Title }} logo" width="80" height="80">
+      </a>
+    </div>
+    <nav aria-label="Primary navigation">
+      <p class="section-label">Navigate</p>
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a class="nav-link" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <section class="sidebar-section sidebar-projects" aria-labelledby="sidebar-projects-title">
+      <p class="section-label" id="sidebar-projects-title">Projects</p>
+      <ul>
+        {{ range where .Site.RegularPages "Section" "projects" }}
+        <li><a class="project-link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </section>
+
+    <section class="sidebar-section" id="about" aria-labelledby="about-title">
+      <p class="section-label" id="about-title">Author</p>
+      <p class="bio">{{ .Site.Params.bio }}</p>
+    </section>
+  </div>
+</aside>

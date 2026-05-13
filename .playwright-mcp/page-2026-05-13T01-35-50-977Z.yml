@@ -1,0 +1,154 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - img [ref=e5]
+      - heading "The LoreAxe Speaks" [level=1] [ref=e11]
+      - paragraph [ref=e12]: Strategy · Deckbuilding · Code
+  - generic [ref=e15]:
+    - complementary [ref=e16]:
+      - generic [ref=e17]:
+        - navigation "Primary navigation" [ref=e18]:
+          - paragraph [ref=e19]: Navigate
+          - list [ref=e20]:
+            - listitem [ref=e21]:
+              - link "Home" [ref=e22] [cursor=pointer]:
+                - /url: "#top"
+            - listitem [ref=e23]:
+              - link "Blog" [ref=e24] [cursor=pointer]:
+                - /url: "#posts"
+            - listitem [ref=e25]:
+              - link "Projects" [ref=e26] [cursor=pointer]:
+                - /url: "#projects"
+            - listitem [ref=e27]:
+              - link "About" [ref=e28] [cursor=pointer]:
+                - /url: "#about"
+        - region "Projects" [ref=e29]:
+          - paragraph [ref=e30]: Projects
+          - list [ref=e31]:
+            - listitem [ref=e32]:
+              - link "MoxMox" [ref=e33] [cursor=pointer]:
+                - /url: "#moxmox"
+            - listitem [ref=e34]:
+              - link "MoxTags" [ref=e35] [cursor=pointer]:
+                - /url: "#moxtags"
+            - listitem [ref=e36]:
+              - link "TCGMizer" [ref=e37] [cursor=pointer]:
+                - /url: "#tcgmizer"
+        - region "Author" [ref=e38]:
+          - paragraph [ref=e39]: Author
+          - paragraph [ref=e40]: "Writings on Magic: The Gathering strategy, deckbuilding, and the tools I build to enhance the game."
+    - main [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: Lantern-light strategy
+        - heading "Deck guides, format notes, and quiet observations from the deep woods of Magic." [level=2] [ref=e44]
+        - paragraph [ref=e45]: Editorial writing on competitive edges, kitchen table stories, and the small software projects that make the game easier to study, sort, and enjoy.
+      - region "Latest Posts" [ref=e46]:
+        - heading "Latest Posts" [level=2] [ref=e47]
+        - generic [ref=e48]:
+          - article [ref=e49]:
+            - generic [ref=e50]:
+              - generic [ref=e51]: ✦ Latest
+              - generic [ref=e52]: May 10, 2026
+              - generic "Tags" [ref=e53]:
+                - generic [ref=e54]: Pauper
+                - generic [ref=e55]: Strategy
+            - heading "Tempo and Card Advantage in Pauper Blue" [level=3] [ref=e56]:
+              - link "Tempo and Card Advantage in Pauper Blue" [ref=e57] [cursor=pointer]:
+                - /url: "#"
+            - paragraph [ref=e58]: Understanding when to hold up mana and when to tap out is the fundamental tension of tempo-based strategies. In Pauper, where the power level is compressed, these decisions matter even more.
+            - link "Read more" [ref=e59] [cursor=pointer]:
+              - /url: "#"
+              - text: Read more
+              - generic [ref=e60]: →
+          - article [ref=e61]:
+            - generic [ref=e62]:
+              - generic [ref=e63]: May 5, 2026
+              - generic "Tags" [ref=e64]:
+                - generic [ref=e65]: Modern
+                - generic [ref=e66]: Deck Guide
+            - heading "Building Mono-Green Stompy for Modern" [level=3] [ref=e67]:
+              - link "Building Mono-Green Stompy for Modern" [ref=e68] [cursor=pointer]:
+                - /url: "#"
+            - paragraph [ref=e69]: Mono-Green Stompy might not be tier one, but it's the deck that taught me more about Magic than any other. Here's my latest build and the reasoning behind every card choice.
+            - link "Read more" [ref=e70] [cursor=pointer]:
+              - /url: "#"
+              - text: Read more
+              - generic [ref=e71]: →
+          - article [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]: April 28, 2026
+              - generic "Tags" [ref=e75]:
+                - generic [ref=e76]: Commander
+                - generic [ref=e77]: Opinion
+            - 'heading "Why I Love Commander: A Format for Storytellers" [level=3] [ref=e78]':
+              - 'link "Why I Love Commander: A Format for Storytellers" [ref=e79] [cursor=pointer]':
+                - /url: "#"
+            - paragraph [ref=e80]: Commander isn't about winning. It's about the story the game tells. Every deck is a character, and every game is an unrepeatable narrative.
+            - link "Read more" [ref=e81] [cursor=pointer]:
+              - /url: "#"
+              - text: Read more
+              - generic [ref=e82]: →
+          - article [ref=e83]:
+            - generic [ref=e84]:
+              - generic [ref=e85]: April 20, 2026
+              - generic "Tags" [ref=e86]:
+                - generic [ref=e87]: Strategy
+                - generic [ref=e88]: Math
+            - 'heading "Mana Base Optimization: The Math Behind Consistent Lands" [level=3] [ref=e89]':
+              - 'link "Mana Base Optimization: The Math Behind Consistent Lands" [ref=e90] [cursor=pointer]':
+                - /url: "#"
+            - paragraph [ref=e91]: How many lands should you run? What's the right color distribution? I ran the hypergeometric probabilities so you don't have to.
+            - link "Read more" [ref=e92] [cursor=pointer]:
+              - /url: "#"
+              - text: Read more
+              - generic [ref=e93]: →
+          - article [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e96]: April 15, 2026
+              - generic "Tags" [ref=e97]:
+                - generic [ref=e98]: Limited
+                - generic [ref=e99]: Draft
+            - heading "Reviewing Tarkir Dragonstorm Draft Archetypes" [level=3] [ref=e100]:
+              - link "Reviewing Tarkir Dragonstorm Draft Archetypes" [ref=e101] [cursor=pointer]:
+                - /url: "#"
+            - paragraph [ref=e102]: Tarkir Dragonstorm brings back clan mechanics with a twist. Here's a breakdown of each draft archetype and where I think the format will settle.
+            - link "Read more" [ref=e103] [cursor=pointer]:
+              - /url: "#"
+              - text: Read more
+              - generic [ref=e104]: →
+          - article [ref=e105]:
+            - generic [ref=e106]:
+              - generic [ref=e107]: April 8, 2026
+              - generic "Tags" [ref=e108]:
+                - generic [ref=e109]: Beginner
+                - generic [ref=e110]: Community
+            - 'heading "From Kitchen Table to FNM: A Beginner''s Journey" [level=3] [ref=e111]':
+              - 'link "From Kitchen Table to FNM: A Beginner''s Journey" [ref=e112] [cursor=pointer]':
+                - /url: "#"
+            - paragraph [ref=e113]: Everyone starts somewhere. This is the story of how I went from slinging kitchen table decks to competing at Friday Night Magic.
+            - link "Read more" [ref=e114] [cursor=pointer]:
+              - /url: "#"
+              - text: Read more
+              - generic [ref=e115]: →
+      - region "Projects" [ref=e116]:
+        - generic [ref=e117]: Built for players
+        - heading "Projects" [level=2] [ref=e118]
+        - generic [ref=e119]:
+          - article [ref=e120]:
+            - img [ref=e122]
+            - generic [ref=e127]:
+              - heading "MoxMox" [level=3] [ref=e128]
+              - paragraph [ref=e129]: A browser extension for quick card price lookups and collection tracking while browsing Magic content online.
+          - article [ref=e130]:
+            - img [ref=e132]
+            - generic [ref=e136]:
+              - heading "MoxTags" [level=3] [ref=e137]
+              - paragraph [ref=e138]: Automatically identifies and tags Magic card names on any webpage, turning them into hoverable card previews.
+          - article [ref=e139]:
+            - img [ref=e141]
+            - generic [ref=e147]:
+              - heading "TCGMizer" [level=3] [ref=e148]
+              - paragraph [ref=e149]: Optimizes TCGPlayer shopping carts by finding the best combination of sellers to minimize total cost including shipping.
+      - generic [ref=e150]:
+        - paragraph [ref=e151]: The LoreAxe Speaks is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
+        - paragraph [ref=e152]: © 2026 The LoreAxe Speaks

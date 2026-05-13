@@ -1,0 +1,7 @@
+/public/
+/resources/
+/.hugo_build.lock
+/node_modules/
+
+# Prototype files (not part of the Hugo site)
+prototype-*.html

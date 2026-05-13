@@ -1,0 +1,72 @@
+baseURL = 'https://theloreaxe.org/'
+title = 'The LoreAxe Speaks'
+languageCode = 'en-US'
+copyright = '© The LoreAxe Speaks'
+
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+summaryLength = 70
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = 'tags'
+
+[permalinks]
+  [permalinks.page]
+    posts = '/posts/:year/:month/:slug/'
+  [permalinks.section]
+    posts = '/posts/'
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
+
+[services]
+  [services.rss]
+    limit = 20
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.goldmark.renderer]
+    unsafe = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+[params]
+  author = 'The LoreAxe'
+  description = 'Magic: The Gathering strategy, deckbuilding, and tools.'
+  tagline = 'Strategy · Deckbuilding · Code'
+  eyebrow = 'Lantern-light strategy'
+  headline = 'Deck guides, format notes, and quiet observations from the deep woods of Magic.'
+  subheadline = 'Editorial writing on competitive edges, kitchen table stories, and the small software projects that make the game easier to study, sort, and enjoy.'
+  bio = 'Writings on Magic: The Gathering strategy, deckbuilding, and the tools I build to enhance the game.'
+  disclaimer = 'The LoreAxe Speaks is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.'
+  mainSections = ['posts']
+  images = ['logo.png']
+
+[[menus.main]]
+  name = 'Home'
+  url = '/'
+  weight = 1
+
+[[menus.main]]
+  name = 'Blog'
+  url = '/posts/'
+  weight = 2
+
+[[menus.main]]
+  name = 'Projects'
+  url = '/projects/'
+  weight = 3
+
+[[menus.main]]
+  name = 'About'
+  url = '/about/'
+  weight = 4

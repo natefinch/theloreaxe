@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="project-page">
+  <h1>{{ .Title }}</h1>
+  <div class="project-body">
+    {{ .Content }}
+  </div>
+</article>
+
+<footer>
+  <p>{{ .Site.Params.disclaimer | safeHTML }}</p>
+  <p>© {{ now.Year }} {{ .Site.Title }}</p>
+</footer>
+{{ end }}
