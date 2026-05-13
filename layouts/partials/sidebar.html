@@ -28,4 +28,22 @@
       <p class="bio">{{ .Site.Params.bio }}</p>
     </section>
   </div>
+
+  {{ if .Params.cards }}
+  <div class="sidebar-decklist" id="decklist">
+    <div class="decklist-header">
+      <h2 class="decklist-title">Decklist</h2>
+      <div class="decklist-views">
+        <button class="decklist-view-btn active" data-view="list">List</button>
+        <button class="decklist-view-btn" data-view="visual">Visual</button>
+      </div>
+    </div>
+    <div class="decklist-commander" id="decklist-commander"></div>
+    <div class="decklist-body" id="decklist-body">
+      <p class="decklist-loading">Loading decklist…</p>
+    </div>
+  </div>
+  {{ $deckData := dict "commander" .Params.commander "partner" (.Params.partner | default "") "cards" (split (trim .Params.cards "\n") "\n") }}
+  <script id="decklist-data" type="application/json">{{ $deckData | jsonify | safeJS }}</script>
+  {{ end }}
 </aside>

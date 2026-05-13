@@ -819,28 +819,31 @@
       font-size: 1.2em;
     }
 
-    /* Decklist container */
-    .decklist-container {
-      margin: 0 0 32px;
-      padding: 24px;
-      border-radius: 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
+    /* Sidebar decklist panel */
+    .sidebar-decklist {
+      margin-top: 16px;
+      padding: 20px 22px 22px 26px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(26, 42, 30, 0.94), rgba(19, 31, 22, 0.92));
+      border: 1px solid rgba(61, 104, 75, 0.5);
+      border-left: 2px solid var(--gold);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
     }
 
     .decklist-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 8px;
     }
 
     .decklist-title {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.4rem;
+      font-size: 1.1rem;
     }
 
     .decklist-views {
@@ -890,22 +893,23 @@
     /* Commander display */
     .decklist-commander {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .decklist-commander img {
-      width: 240px;
+      width: 100%;
+      max-width: 220px;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
       margin: 0 auto;
     }
 
     .decklist-commander-name {
-      margin: 8px 0 0;
+      margin: 6px 0 0;
       color: var(--gold);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.82rem;
     }
 
     /* Type group */
@@ -945,16 +949,16 @@
       padding: 0;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 2px 24px;
+      grid-template-columns: 1fr;
+      gap: 1px;
     }
 
     .decklist-list-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 3px 0;
-      font-size: 0.92rem;
+      gap: 6px;
+      padding: 2px 0;
+      font-size: 0.82rem;
       cursor: default;
     }
 
@@ -1010,13 +1014,13 @@
     .decklist-visual {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 0;
-      padding: 4px 56px 10px 0;
+      gap: 6px 0;
+      padding: 4px 42px 8px 0;
     }
 
     .decklist-visual-card {
-      width: 100px;
-      margin-right: -56px;
+      width: 75px;
+      margin-right: -42px;
       transition: transform 200ms ease, z-index 0ms;
       position: relative;
       z-index: 1;
@@ -1024,7 +1028,7 @@
     }
 
     .decklist-visual-card:hover {
-      transform: scale(2.2);
+      transform: scale(2.8);
       z-index: 100;
     }
 
@@ -1055,24 +1059,20 @@
     }
 
     @media (max-width: 640px) {
-      .decklist-container {
-        padding: 16px;
-      }
-
-      .decklist-list {
-        grid-template-columns: 1fr;
+      .sidebar-decklist {
+        padding: 14px;
       }
 
       .decklist-visual-card {
-        width: 80px;
-        margin-right: -44px;
+        width: 65px;
+        margin-right: -36px;
       }
 
       .decklist-visual-card:hover {
-        transform: scale(1.8);
+        transform: scale(2.2);
       }
 
       .decklist-commander img {
-        width: 180px;
+        max-width: 160px;
       }
     }
