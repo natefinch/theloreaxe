@@ -180,10 +180,10 @@
 }
 
     :root, [data-theme="dark"] {
-      --bg: #0f1a12;
-      --bg-alt: #121f15;
-      --surface: #1a2a1e;
-      --surface-hover: #1f3224;
+      --bg: #152219;
+      --bg-alt: #18271c;
+      --surface: #1e3025;
+      --surface-hover: #24392b;
       --primary: #6aaf7b;
       --secondary: #3d684b;
       --glow: #93b483;
@@ -274,10 +274,9 @@
       padding: 28px 20px 20px;
       text-align: center;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
-        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 0 2px, transparent 2px 12px),
-        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 0 2px, transparent 2px 12px),
-        linear-gradient(180deg, #070e09 0%, #0c150f 100%);
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0 2px, transparent 2px 12px),
+        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 12px),
+        linear-gradient(180deg, #060c08 0%, #0a120d 100%);
       border-bottom: 1px solid rgba(204, 167, 83, 0.2);
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), inset 0 -1px 0 rgba(61, 104, 75, 0.25);
     }
@@ -356,10 +355,9 @@
       justify-content: center;
       padding: 10px 20px;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%),
-        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 0 2px, transparent 2px 12px),
-        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 0 2px, transparent 2px 12px),
-        linear-gradient(180deg, #070e09 0%, #0c150f 100%);
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0 2px, transparent 2px 12px),
+        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 12px),
+        linear-gradient(180deg, #060c08 0%, #0a120d 100%);
       border-bottom: 1px solid rgba(204, 167, 83, 0.2);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
       transform: translateY(-100%);
@@ -445,7 +443,7 @@
       border: 1px solid rgba(61, 104, 75, 0.5);
       border-left: 2px solid var(--gold);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(26, 42, 30, 0.94), rgba(19, 31, 22, 0.92));
+      background: linear-gradient(180deg, rgba(34, 54, 40, 0.95), rgba(28, 46, 34, 0.93));
       box-shadow: var(--shadow);
       backdrop-filter: blur(8px);
     }
@@ -1056,18 +1054,16 @@
 
     [data-theme="light"] .top-banner {
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 30%),
-        repeating-linear-gradient(45deg, rgba(61, 104, 75, 0.04) 0 2px, transparent 2px 12px),
-        repeating-linear-gradient(-45deg, rgba(61, 104, 75, 0.03) 0 2px, transparent 2px 12px),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0 2px, transparent 2px 12px),
+        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 12px),
         linear-gradient(180deg, #2d4e38 0%, #345a40 100%);
       color: #e8f0e6;
     }
 
     [data-theme="light"] .sticky-header {
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 30%),
-        repeating-linear-gradient(45deg, rgba(61, 104, 75, 0.04) 0 2px, transparent 2px 12px),
-        repeating-linear-gradient(-45deg, rgba(61, 104, 75, 0.03) 0 2px, transparent 2px 12px),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0 2px, transparent 2px 12px),
+        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 12px),
         linear-gradient(180deg, #2d4e38 0%, #345a40 100%);
       color: #e8f0e6;
     }
