@@ -2,7 +2,7 @@
 title = "Samut, Vizier of Naktamun: Gotta Go Fast"
 date = 2026-04-15T09:00:00-04:00
 draft = false
-description =  "Tarkir Dragonstorm brings back clan mechanics with a twist. Here's a breakdown of each draft archetype and where I think the format will settle."
+description =  "A gruul aggro deck that splats out creatures, has card draw in the command zone *and* is boardwipe resistant?"
 tags = ["Commander", "Deck Tech"]
 decklist = "https://moxfield.com/decks/MhIsUMybuU-wIMnEPHeTLw"
 commander = "Samut, Vizier of Naktamun (MAT) 45"
