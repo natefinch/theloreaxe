@@ -61,7 +61,8 @@
     if (!name) return;
     var t = createTooltip();
     var img = t.querySelector('img');
-    var url = 'https://api.scryfall.com/cards/named?exact='
+    // Use fuzzy match which handles partial names and DFCs better
+    var url = 'https://api.scryfall.com/cards/named?fuzzy='
       + encodeURIComponent(name) + '&format=image&version=normal';
     img.alt = name;
     if (cache[name]) {
@@ -69,6 +70,14 @@
     } else {
       img.src = url;
       img.onload = function() { cache[name] = img.src; };
+      img.onerror = function() {
+        // Try with just the front name
+        var front = name.indexOf(' // ') > -1 ? name.substring(0, name.indexOf(' // ')) : name;
+        if (front !== name) {
+          img.src = 'https://api.scryfall.com/cards/named?fuzzy='
+            + encodeURIComponent(front) + '&format=image&version=normal';
+        }
+      };
     }
     positionTooltip(e);
     t.classList.add('visible');
@@ -209,13 +218,19 @@
     // Enrich mainboard cards
     var enriched = cardLines.map(function(c) {
       var sc = lookup[c.set + '|' + c.cn];
+      var hasLandBack = false;
+      if (sc && sc.card_faces && sc.card_faces.length > 1) {
+        var backType = (sc.card_faces[1].type_line || '').toLowerCase();
+        if (backType.includes('land')) hasLandBack = true;
+      }
       return {
         name: sc ? sc.name : c.name,
         qty: c.qty,
         manaCost: sc ? (sc.mana_cost || (sc.card_faces && sc.card_faces[0] ? sc.card_faces[0].mana_cost : '') || '') : '',
         cmc: sc ? (sc.cmc || 0) : 0,
         typeLine: sc ? (sc.type_line || '') : '',
-        category: sc ? categorizeCard(sc.type_line) : 'Other'
+        category: sc ? categorizeCard(sc.type_line) : 'Other',
+        hasLandBack: hasLandBack
       };
     });
 
@@ -234,6 +249,12 @@
       });
     });
 
+    // Count MDFCs with land backs (not in the Land category themselves)
+    var mdfcLandCount = 0;
+    enriched.forEach(function(c) {
+      if (c.hasLandBack && c.category !== 'Land') mdfcLandCount += c.qty;
+    });
+
     var html = '';
     TYPE_ORDER.concat(['Other']).forEach(function(cat) {
       var group = groups[cat];
@@ -242,7 +263,12 @@
 
       html += '<div class="decklist-group">';
       html += '<div class="decklist-group-header">' + cat;
-      html += ' <span class="decklist-group-count">(' + totalCards + ')</span></div>';
+      if (cat === 'Land' && mdfcLandCount > 0) {
+        html += ' <span class="decklist-group-count">(' + totalCards + ' + ' + mdfcLandCount + ' MDFCs)</span>';
+      } else {
+        html += ' <span class="decklist-group-count">(' + totalCards + ')</span>';
+      }
+      html += '</div>';
 
       html += '<ul class="decklist-list">';
       group.forEach(function(c) {
