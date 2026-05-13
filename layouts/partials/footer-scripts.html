@@ -236,15 +236,28 @@
     bodyEl.setAttribute('data-view', currentView);
   }
 
-  fetch('https://api2.moxfield.com/v3/decks/all/' + deckId)
+  // Try local cached data first, then fall back to Moxfield API
+  var localUrl = '/decks/' + deckId + '.json';
+  var apiUrl = 'https://api2.moxfield.com/v3/decks/all/' + deckId;
+
+  fetch(localUrl)
     .then(function(res) {
-      if (!res.ok) throw new Error('HTTP ' + res.status);
+      if (!res.ok) throw new Error('No local data');
       return res.json();
     })
     .then(renderDecklist)
-    .catch(function(err) {
-      console.warn('Could not load decklist:', err);
-      bodyEl.innerHTML = '<p class="decklist-error">Could not load decklist automatically. <a href="' + deckUrl + '" target="_blank" rel="noopener">View it on Moxfield →</a></p>';
+    .catch(function() {
+      // Fall back to Moxfield API (may be blocked by CORS)
+      fetch(apiUrl)
+        .then(function(res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(renderDecklist)
+        .catch(function(err) {
+          console.warn('Could not load decklist:', err);
+          bodyEl.innerHTML = '<p class="decklist-error">Could not load decklist automatically. <a href="' + deckUrl + '" target="_blank" rel="noopener">View it on Moxfield →</a></p>';
+        });
     });
 })();
 </script>
