@@ -1,5 +1,17 @@
 <script>
 (function() {
+  // Sticky header on scroll
+  var banner = document.getElementById('top');
+  var sticky = document.getElementById('sticky-header');
+  if (banner && sticky) {
+    var shown = false;
+    window.addEventListener('scroll', function() {
+      var gone = banner.getBoundingClientRect().bottom < 0;
+      if (gone && !shown) { sticky.classList.add('visible'); shown = true; }
+      else if (!gone && shown) { sticky.classList.remove('visible'); shown = false; }
+    }, { passive: true });
+  }
+
   // Convert [[Card Name]] to hoverable card references
   var containers = document.querySelectorAll('.post-body, .project-body, .single-post, .content');
   containers.forEach(function(el) {
