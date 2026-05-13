@@ -355,6 +355,10 @@
       backdrop-filter: blur(8px);
     }
 
+    .has-decklist .sidebar-inner {
+      position: static;
+    }
+
     .sidebar-logo {
       text-align: center;
       margin-bottom: 20px;

@@ -3,7 +3,7 @@
 <head>
   {{- partial "head.html" . -}}
 </head>
-<body>
+<body{{ with .Params.cards }} class="has-decklist"{{ end }}>
   {{- partial "header.html" . -}}
   <div class="layout">
     {{- partial "sidebar.html" . -}}
