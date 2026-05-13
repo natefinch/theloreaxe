@@ -2,6 +2,7 @@
 /resources/
 /.hugo_build.lock
 /node_modules/
+/.playwright-mcp/
 
 # Prototype files (not part of the Hugo site)
 prototype-*.html

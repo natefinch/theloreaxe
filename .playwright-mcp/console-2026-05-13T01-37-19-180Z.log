@@ -1,2 +1,0 @@
-[   75293ms] [ERROR] Unsafe attempt to load URL file:///Users/natefinch/src/github.com/natefinch/theloreaxe/prototype-f-deep-woods.html from frame with URL file:///Users/natefinch/src/github.com/natefinch/theloreaxe/prototype-f-deep-woods.html. 'file:' URLs are treated as unique security origins.
- @ file:///Users/natefinch/src/github.com/natefinch/theloreaxe/prototype-f-deep-woods.html:0
