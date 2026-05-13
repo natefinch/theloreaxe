@@ -1,0 +1,26 @@
+{{ define "main" }}
+<header class="intro">
+  <h2>{{ .Title }}</h2>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</header>
+
+<section id="projects">
+  <div class="post-list">
+    {{ range $index, $project := .Pages }}
+    <article class="post">
+      {{ if gt $index 0 }}
+      <div class="post-divider" aria-hidden="true"><span></span></div>
+      {{ end }}
+      <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p class="excerpt">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 200 }}{{ end }}</p>
+      <a class="read-more" href="{{ .RelPermalink }}">Read more <span aria-hidden="true">→</span></a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+<footer>
+  <p>{{ .Site.Params.disclaimer | safeHTML }}</p>
+  <p>© {{ now.Year }} {{ .Site.Title }}</p>
+</footer>
+{{ end }}
