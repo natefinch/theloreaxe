@@ -7,16 +7,15 @@ description: "About The LoreAxe Speaks — an MTG strategy and deckbuilding blog
 
 ## What You'll Find Here
 
-- **Strategy articles** — Deep dives into format-specific strategy, from Pauper to Modern to Commander
-- **Deck guides** — Detailed breakdowns of decks I've built and played, with card choices explained
-- **Set reviews** — Draft archetype analysis and limited format guides
-- **Tool updates** — News and documentation for the coding projects I work on related to Magic.
+- **Deck Techs** — Detailed breakdowns of decks I've built and played, with a focus on mid-budget bracket 3.
+- **Project Updates** — News and documentation for the coding projects I work on related to Magic.
+- **Strategy and Hobby Musings** — This is my blog, so I'll talk about what I want :)
 
 ## Who I Am
 
 I'm a magic veteran with 30 years of experience playing the game in various formats. These days I mostly play Commander, because I find the multiplayer format to be more interesting than 1v1.
 
-I've also been a professional software engineer for 27 years, currently working at GitHub on Copilot.
+I've been a professional software engineer for 27 years, currently working at [GitHub](https://github.com) on GitHub Copilot.
 
 ## Contact
 
