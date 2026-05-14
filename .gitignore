@@ -6,3 +6,5 @@
 
 # Prototype files (not part of the Hugo site)
 prototype-*.html
+
+.DS_Store
