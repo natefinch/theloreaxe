@@ -863,6 +863,23 @@
       .decklist-toggle[aria-expanded="false"] + .decklist-content {
         display: none;
       }
+
+      .decklist-list-item {
+        font-size: 1.1rem;
+        padding: 4px 0;
+      }
+
+      .decklist-mana .ms {
+        font-size: 1rem;
+      }
+
+      .decklist-qty {
+        font-size: 1.1rem;
+      }
+
+      .decklist-group-header {
+        font-size: 0.9rem;
+      }
     }
 
     @media (max-width: 640px) {
