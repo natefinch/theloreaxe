@@ -847,6 +847,10 @@
         display: block;
       }
 
+      .site-tagline {
+        display: none;
+      }
+
       .content {
         max-width: none;
         padding-top: 0;
