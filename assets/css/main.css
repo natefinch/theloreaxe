@@ -346,7 +346,7 @@
     }
 
     [data-theme="light"] .mobile-nav a {
-      color: #e8f0e6;
+      color: #e8f0e6 !important;
     }
 
     .mobile-nav a:hover {
@@ -354,7 +354,7 @@
     }
 
     [data-theme="light"] .mobile-nav a:hover {
-      color: #d5b261;
+      color: #d5b261 !important;
     }
 
     .top-ornament {
@@ -945,6 +945,23 @@
       .project-icon {
         width: 58px;
         height: 58px;
+      }
+
+      .decklist-list-item {
+        font-size: 1.4rem;
+        padding: 5px 0;
+      }
+
+      .decklist-mana .ms {
+        font-size: 1.3rem;
+      }
+
+      .decklist-qty {
+        font-size: 1.4rem;
+      }
+
+      .decklist-group-header {
+        font-size: 1.1rem;
       }
     }
 

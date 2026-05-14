@@ -7,8 +7,14 @@
 <script>
 (function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();
 </script>
-{{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint "sha256" }}
+{{ $css := resources.Get "css/main.css" }}
+{{ if hugo.IsProduction }}
+  {{ $css = $css | resources.Minify | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ else }}
+  {{ $css = $css | resources.Fingerprint "sha256" }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ end }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.min.css">
 {{ partial "opengraph.html" . }}
 {{ partial "twitter_cards.html" . }}
