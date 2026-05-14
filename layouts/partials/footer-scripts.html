@@ -1,5 +1,18 @@
 <script>
 (function() {
+  // Decklist toggle (mobile)
+  var toggle = document.getElementById('decklist-toggle');
+  if (toggle) {
+    // Start collapsed on mobile
+    if (window.innerWidth <= 920) {
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    toggle.addEventListener('click', function() {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+    });
+  }
+
   // Theme toggle
   (function initTheme() {
     var stored = localStorage.getItem('theme');

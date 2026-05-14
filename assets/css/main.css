@@ -847,6 +847,14 @@
         max-width: none;
         padding-top: 0;
       }
+
+      .decklist-toggle-icon {
+        display: inline;
+      }
+
+      .decklist-toggle[aria-expanded="false"] + .decklist-content {
+        display: none;
+      }
     }
 
     @media (max-width: 640px) {
@@ -930,6 +938,7 @@
       font-size: 0.75rem;
       color: var(--gold);
       transition: transform 200ms ease;
+      display: none;
     }
 
     .decklist-toggle[aria-expanded="true"] .decklist-toggle-icon {

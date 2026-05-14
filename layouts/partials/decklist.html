@@ -135,10 +135,14 @@
 {{ end }}
 
 <div class="sidebar-decklist" id="decklist">
-  <h2 class="decklist-title">Decklist</h2>
-  {{ with $decklistUrl }}
-  <a class="decklist-moxfield-link" href="{{ . }}" target="_blank" rel="noopener">View on Moxfield →</a>
-  {{ end }}
+  <button class="decklist-toggle" id="decklist-toggle" aria-expanded="true" aria-controls="decklist-content">
+    <h2 class="decklist-title">Decklist</h2>
+    <span class="decklist-toggle-icon" aria-hidden="true">▶</span>
+  </button>
+  <div class="decklist-content" id="decklist-content">
+    {{ with $decklistUrl }}
+    <a class="decklist-moxfield-link" href="{{ . }}" target="_blank" rel="noopener">View on Moxfield →</a>
+    {{ end }}
 
   <div class="decklist-commander">
     {{ range $commanders }}
@@ -203,5 +207,6 @@
         </div>
       {{ end }}
     {{ end }}
+  </div>
   </div>
 </div>
