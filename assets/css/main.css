@@ -865,20 +865,20 @@
       }
 
       .decklist-list-item {
-        font-size: 1.1rem;
-        padding: 4px 0;
+        font-size: 1.4rem;
+        padding: 5px 0;
       }
 
       .decklist-mana .ms {
-        font-size: 1rem;
+        font-size: 1.3rem;
       }
 
       .decklist-qty {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
       }
 
       .decklist-group-header {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
       }
     }
 
