@@ -1,6 +1,6 @@
 +++
 title = "Ivy Gleeful Spellthief"
-date = 2026-05-10T09:00:00-04:00
+date = 2025-02-10T09:00:00-04:00
 draft = false
 description = "A unique simic commander that creates a wide diversity in gameplay."
 tags = ["Commander", "Deck Tech"]

@@ -1,6 +1,6 @@
 +++
 title = "Sasaya, Lost In the Woods"
-date = 2026-05-05T09:00:00-04:00
+date = 2025-05-05T09:00:00-04:00
 draft = false
 description = "Can you win with 50+ basic forests. Oh yes."
 tags = ["Commander", "Deck Tech"]
