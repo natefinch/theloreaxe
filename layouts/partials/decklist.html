@@ -1,0 +1,212 @@
+{{ $cardText := .Params.cards }}
+{{ $commanderText := .Params.commander }}
+{{ $partnerText := .Params.partner | default "" }}
+{{ $decklistUrl := .Params.decklist | default "" }}
+{{ $typeOrder := slice "Battle" "Planeswalker" "Creature" "Sorcery" "Instant" "Artifact" "Enchantment" "Land" }}
+{{ $renderOrder := slice "Battle" "Planeswalker" "Creature" "Sorcery" "Instant" "Artifact" "Enchantment" "Land" "Other" }}
+
+{{/* Parse card lines */}}
+{{ $parsed := slice }}
+{{ $identifiers := slice }}
+{{ range split (trim $cardText "\n") "\n" }}
+  {{ $line := replaceRE `\s*\*F\*$` "" (trim . " ") }}
+  {{ if $line }}
+    {{ $match := findRESubmatch `^(\d+)\s+(.+?)\s+\(([^)]+)\)\s+(.+)$` $line }}
+    {{ if $match }}
+      {{ $qty := index (index $match 0) 1 | int }}
+      {{ $name := index (index $match 0) 2 }}
+      {{ $set := index (index $match 0) 3 | lower }}
+      {{ $cn := index (index $match 0) 4 }}
+      {{ $parsed = $parsed | append (dict "qty" $qty "name" $name "set" $set "cn" $cn) }}
+      {{ $identifiers = $identifiers | append (dict "set" $set "collector_number" $cn) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Parse commander(s) */}}
+{{ $commanders := slice }}
+{{ range slice $commanderText $partnerText }}
+  {{ $line := replaceRE `\s*\*F\*$` "" (trim . " ") }}
+  {{ if $line }}
+    {{ $match := findRESubmatch `^(.+?)\s+\(([^)]+)\)\s+(.+)$` $line }}
+    {{ if $match }}
+      {{ $name := index (index $match 0) 1 }}
+      {{ $set := index (index $match 0) 2 | lower }}
+      {{ $cn := index (index $match 0) 3 }}
+      {{ $commanders = $commanders | append (dict "name" $name "set" $set "cn" $cn) }}
+      {{ $identifiers = $identifiers | append (dict "set" $set "collector_number" $cn) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Fetch from Scryfall in batches of 75 */}}
+{{ $allScryfall := slice }}
+{{ $siteURL := default "https://theloreaxe.com/" .Site.BaseURL }}
+{{ $scryfallHeaders := dict
+  "Accept" "application/json;q=0.9,*/*;q=0.8"
+  "Content-Type" "application/json"
+  "User-Agent" (printf "theloreaxe/1.0 (+%s)" $siteURL)
+}}
+{{ $batch1 := first 75 $identifiers }}
+{{ if gt (len $batch1) 0 }}
+  {{ $body1 := dict "identifiers" $batch1 | jsonify }}
+  {{ $opts1 := dict "method" "POST" "body" $body1 "headers" $scryfallHeaders }}
+  {{ with resources.GetRemote "https://api.scryfall.com/cards/collection" $opts1 }}
+    {{ $resp := .Content | transform.Unmarshal }}
+    {{ with $resp.data }}
+      {{ range . }}
+        {{ $allScryfall = $allScryfall | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $identifiers) 75 }}
+  {{ $batch2 := after 75 $identifiers }}
+  {{ if gt (len $batch2) 0 }}
+    {{ $body2 := dict "identifiers" $batch2 | jsonify }}
+    {{ $opts2 := dict "method" "POST" "body" $body2 "headers" $scryfallHeaders }}
+    {{ with resources.GetRemote "https://api.scryfall.com/cards/collection" $opts2 }}
+      {{ $resp := .Content | transform.Unmarshal }}
+      {{ with $resp.data }}
+        {{ range . }}
+          {{ $allScryfall = $allScryfall | append . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Build lookup: set|cn -> Scryfall card */}}
+{{ $lookup := dict }}
+{{ range $allScryfall }}
+  {{ $key := printf "%s|%s" (lower .set) (lower .collector_number) }}
+  {{ $lookup = merge $lookup (dict $key .) }}
+{{ end }}
+
+{{/* Enrich and categorize mainboard cards */}}
+{{ $enriched := slice }}
+{{ $mdfcLandCount := 0 }}
+{{ range $parsed }}
+  {{ $key := printf "%s|%s" .set (lower .cn) }}
+  {{ $sc := index $lookup $key }}
+  {{ $card := dict "qty" .qty "name" .name "manaCost" "" "cmc" 0.0 "typeLine" "" "category" "Other" "imageUrl" "" }}
+  {{ if $sc }}
+    {{ $manaCost := default "" $sc.mana_cost }}
+    {{ if and (not $manaCost) $sc.card_faces }}
+      {{ $manaCost = default "" (index (index $sc.card_faces 0) "mana_cost") }}
+    {{ end }}
+
+    {{ $cat := "Other" }}
+    {{ $tl := lower (default "" $sc.type_line) }}
+    {{ range $typeOrder }}
+      {{ if and (eq $cat "Other") (in $tl (lower .)) }}
+        {{ $cat = . }}
+      {{ end }}
+    {{ end }}
+
+    {{ if and $sc.card_faces (ge (len $sc.card_faces) 2) }}
+      {{ $backType := lower (default "" (index (index $sc.card_faces 1) "type_line")) }}
+      {{ if and (in $backType "land") (ne $cat "Land") }}
+        {{ $mdfcLandCount = add $mdfcLandCount .qty }}
+      {{ end }}
+    {{ end }}
+
+    {{ $imgUrl := "" }}
+    {{ with $sc.image_uris }}
+      {{ $imgUrl = .normal }}
+    {{ end }}
+    {{ if and (not $imgUrl) $sc.card_faces }}
+      {{ with index (index $sc.card_faces 0) "image_uris" }}
+        {{ $imgUrl = .normal }}
+      {{ end }}
+    {{ end }}
+
+    {{ $card = merge $card (dict
+      "name" $sc.name
+      "manaCost" $manaCost
+      "cmc" (default 0.0 $sc.cmc)
+      "typeLine" (default "" $sc.type_line)
+      "category" $cat
+      "imageUrl" $imgUrl
+    ) }}
+  {{ end }}
+  {{ $enriched = $enriched | append $card }}
+{{ end }}
+
+<div class="sidebar-decklist" id="decklist">
+  <button class="decklist-toggle" id="decklist-toggle" aria-expanded="true" aria-controls="decklist-content">
+    <h2 class="decklist-title">Decklist</h2>
+    <span class="decklist-toggle-icon" aria-hidden="true">▶</span>
+  </button>
+  <div class="decklist-content" id="decklist-content">
+    {{ with $decklistUrl }}
+    <a class="decklist-moxfield-link" href="{{ . }}" target="_blank" rel="noopener">View on Moxfield →</a>
+    {{ end }}
+
+  <div class="decklist-commander">
+    {{ range $commanders }}
+      {{ $key := printf "%s|%s" .set (lower .cn) }}
+      {{ $sc := index $lookup $key }}
+      {{ $name := .name }}
+      {{ $imgUrl := "" }}
+      {{ if $sc }}
+        {{ $name = $sc.name }}
+        {{ with $sc.image_uris }}
+          {{ $imgUrl = .normal }}
+        {{ end }}
+        {{ if and (not $imgUrl) $sc.card_faces }}
+          {{ with index (index $sc.card_faces 0) "image_uris" }}
+            {{ $imgUrl = .normal }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      <div style="display:inline-block;margin:0 8px;">
+        {{ if $imgUrl }}<img src="{{ $imgUrl }}" alt="{{ $name }}" loading="lazy">{{ end }}
+        <p class="decklist-commander-name">{{ $name }}</p>
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="decklist-body">
+    {{ range $cat := $renderOrder }}
+      {{ $group := where $enriched "category" $cat }}
+      {{ if $group }}
+        {{ $group = sort $group "name" }}
+        {{ $group = sort $group "cmc" }}
+        {{ $totalQty := 0 }}
+        {{ range $group }}
+          {{ $totalQty = add $totalQty .qty }}
+        {{ end }}
+        <div class="decklist-group">
+          <div class="decklist-group-header">{{ $cat }}
+            {{ if and (eq $cat "Land") (gt $mdfcLandCount 0) }}
+              <span class="decklist-group-count">({{ $totalQty }} + {{ $mdfcLandCount }} MDFC)</span>
+            {{ else }}
+              <span class="decklist-group-count">({{ $totalQty }})</span>
+            {{ end }}
+          </div>
+          <ul class="decklist-list">
+            {{ range $group }}
+              {{ $displayName := .name }}
+              {{ if in .name " // " }}
+                {{ $displayName = index (split .name " // ") 0 }}
+              {{ end }}
+              <li class="decklist-list-item">
+                <span class="decklist-qty">{{ .qty }}</span>
+                <span class="decklist-card-name card-ref" data-card="{{ .name }}">{{ $displayName }}</span>
+                <span class="decklist-mana">
+                  {{ range findRE `\{[^}]+\}` .manaCost }}
+                    {{ $sym := replace (lower (replaceRE `[\{\}]` "" .)) "/" "" }}
+                    <i class="ms ms-cost ms-shadow ms-{{ $sym }}" aria-hidden="true"></i>
+                  {{ end }}
+                </span>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+  </div>
+</div>

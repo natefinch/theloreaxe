@@ -839,13 +839,46 @@
         display: none;
       }
 
+      .sidebar {
+        order: -1;
+      }
+
       .mobile-nav {
         display: block;
+      }
+
+      .site-tagline {
+        display: none;
       }
 
       .content {
         max-width: none;
         padding-top: 0;
+      }
+
+      .decklist-toggle-icon {
+        display: inline;
+      }
+
+      .decklist-toggle[aria-expanded="false"] + .decklist-content {
+        display: none;
+      }
+
+      .decklist-list-item {
+        font-size: 1.4rem;
+        padding: 5px 0;
+      }
+
+      .decklist-mana .ms {
+        font-size: 1.3rem;
+      }
+
+      .decklist-qty {
+        font-size: 1.4rem;
+      }
+
+      .decklist-group-header {
+        font-size: 1.1rem;
       }
     }
 
@@ -930,6 +963,7 @@
       font-size: 0.75rem;
       color: var(--gold);
       transition: transform 200ms ease;
+      display: none;
     }
 
     .decklist-toggle[aria-expanded="true"] .decklist-toggle-icon {

@@ -6,6 +6,7 @@
     </button>
     <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
     <p class="site-tagline">{{ .Site.Params.tagline }}</p>
+    <div class="top-ornament" aria-hidden="true"><span></span></div>
     <nav class="mobile-nav" aria-label="Mobile navigation">
       <ul>
         {{ range .Site.Menus.main }}
@@ -13,7 +14,6 @@
         {{ end }}
       </ul>
     </nav>
-    <div class="top-ornament" aria-hidden="true"><span></span></div>
   </div>
 </header>
 <div class="sticky-header" id="sticky-header">
