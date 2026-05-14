@@ -6,6 +6,13 @@
     </button>
     <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
     <p class="site-tagline">{{ .Site.Params.tagline }}</p>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
     <div class="top-ornament" aria-hidden="true"><span></span></div>
   </div>
 </header>
