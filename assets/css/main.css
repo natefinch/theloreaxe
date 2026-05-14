@@ -345,8 +345,16 @@
       transition: color 180ms ease;
     }
 
+    [data-theme="light"] .mobile-nav a {
+      color: #e8f0e6;
+    }
+
     .mobile-nav a:hover {
       color: var(--glow);
+    }
+
+    [data-theme="light"] .mobile-nav a:hover {
+      color: #d5b261;
     }
 
     .top-ornament {
