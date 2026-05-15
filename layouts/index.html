@@ -1,7 +1,7 @@
 {{ define "main" }}
 <header class="intro">
-  <span class="eyebrow">{{ .Site.Params.eyebrow | default "Lantern-light strategy" }}</span>
   <h2>{{ .Site.Params.headline }}</h2>
+  <span class="eyebrow">{{ .Site.Params.eyebrow }}</span>
   <p>{{ .Site.Params.subheadline }}</p>
 </header>
 
@@ -34,8 +34,8 @@
 {{ $projects := where .Site.RegularPages "Section" "projects" }}
 {{ if $projects }}
 <section class="projects" id="projects" aria-labelledby="projects-title">
-  <span class="eyebrow">Built for players</span>
   <h2 id="projects-title">Projects</h2>
+  <span class="eyebrow">Built for players</span>
   <div class="project-cards">
     {{ range $projects }}
     <a href="{{ .RelPermalink }}" class="project-card" id="{{ .File.BaseFileName }}">
