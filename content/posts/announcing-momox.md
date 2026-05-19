@@ -1,6 +1,10 @@
 
 +++
-
+title = "Announcing MoxMox"
+date = 2026-05-19T09:00:00-04:00
+draft = false
+description =  "MoxMox is a browser extension that enables multiplayer functionality inside Moxfield's playtester UI, including support for playing DanDan and other shared deck games with friends."
+tags = ["Code"]
 +++
 
 
