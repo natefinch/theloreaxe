@@ -30,4 +30,6 @@ Download the extension from the project's releases page here, and follow install
 
 https://github.com/natefinch/moxmox/releases
 
-Try it out and please feel free to leave bug reports or feature requests here or on GitHub. 
+Try it out and please feel free to leave bug reports or feature requests in issues on GitHub. 
+
+Yes, I plan to extend support for Archidekt's playtester, too, even "cross-platform". 
