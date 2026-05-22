@@ -1,6 +1,6 @@
 {{ define "main" }}
 <header class="intro">
-  <h2>{{ if eq .Kind "term" }}<a href="{{ "/tags/" | relURL }}">Tags</a> &rsaquo; {{ end }}{{ .Title }}{{ if eq .Kind "term" }}</h2>{{ else }}</h2>{{ end }}
+  <h2>{{ .Title }}</h2>
   {{ with .Description }}<p>{{ . }}</p>{{ end }}
 </header>
 
