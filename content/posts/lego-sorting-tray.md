@@ -2,6 +2,7 @@
 title = "Lego Sorting Tray"
 date = 2025-12-16T09:00:00-04:00
 draft = false
+image = "/images/lego-sorting-tray.jpeg"
 description =  "Why buy a sorting tray when you can use way too many Lego pieces to make one instead?"
 tags = ["Hobby"]
 +++

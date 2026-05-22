@@ -6,7 +6,7 @@
     {{ if .Params.tags }}
     <div class="tags" aria-label="Tags">
       {{ range .Params.tags }}
-      <span class="tag">{{ . }}</span>
+      <a class="tag" href="{{ printf "/tags/%s/" (. | urlize) }}">{{ . }}</a>
       {{ end }}
     </div>
     {{ end }}

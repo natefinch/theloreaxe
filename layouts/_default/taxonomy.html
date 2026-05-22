@@ -1,0 +1,21 @@
+{{ define "main" }}
+<header class="intro">
+  <h2>Tags</h2>
+</header>
+
+<section id="tags-list">
+  <ul class="tag-index">
+    {{ range .Pages.ByTitle }}
+    <li>
+      <span class="tag-count">{{ len .Pages }}</span>
+      <a class="tag-link" href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">→</span></a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+<footer>
+  <p>{{ .Site.Params.disclaimer | safeHTML }}</p>
+  <p>© {{ now.Year }} {{ .Site.Title }}</p>
+</footer>
+{{ end }}

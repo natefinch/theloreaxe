@@ -4,6 +4,95 @@ date = 2024-10-08T09:00:00-04:00
 draft = false
 description =  "Dopplegang for X=3, I make 18 new lands..."
 tags = ["Commander", "Deck Tech"]
+decklist = "https://moxfield.com/decks/ePnUU4honUiTQLKfXRQmxw"
+commander = "Magus Lucea Kane (40K) 174 *F*" 
+cards = """
+1 Aberrant (40K) 86
+1 Alchemist's Refuge (PLST) AVR-225 *F*
+1 Altered Ego (SOI) 241
+1 Animist's Awakening (ORI) 169
+1 Aphetto Alchemist (ONS) 64
+1 Awaken the Woods (BRO) 170
+1 Banefire (M19) 130
+1 Blue Sun's Twilight (ONE) 379
+1 Bonfire of the Damned (MM3) 91
+1 Canopy Tactician (KHM) 378
+1 Cascade Bluffs (2XM) 313
+1 Chord of Calling (M15) 172
+1 Cinder Glade (CLB) 887
+1 Comet Storm (CMR) 411
+1 Command Tower (WHO) 265
+1 Commander's Insight (C21) 23
+1 Crackle with Power (OTP) 22
+1 Danny Pink (WHO) 39
+1 Doppelgang (MKM) 198
+1 Dreamroot Cascade (WHO) 273
+1 Electrodominance (OTP) 23
+1 Elementalist's Palette (C21) 76
+1 Exponential Growth (STX) 130
+1 Fanatic of Rhonas (MH3) 458
+1 Farseek (RVR) 138
+1 Fires of Yavimaya (CNS) 188
+1 Flooded Grove (LTC) 309
+1 For the Common Good (BLB) 172
+7 Forest (OTJ) 286
+1 Garruk's Uprising (WOT) 53
+1 Growing Rites of Itlimoc / Itlimoc, Cradle of the Sun (XLN) 191
+1 Gyre Sage (MOC) 300
+1 Helix Pinnacle (PLST) EVE-68
+1 Hinterland Harbor (LCC) 336
+1 Hydroid Krasis (M3C) 266
+1 Incubation Druid (MOC) 302
+1 Ioreth of the Healing House (LTR) 56
+4 Island (OTJ) 280
+1 Jaya's Immolating Inferno (DOM) 133
+1 Kami of Whispered Hopes (MOM) 196
+1 Karplusan Forest (DKM) 39
+1 Kelpie Guide (STX) 45
+1 Kessig Wolf Run (MKC) 269
+1 Ketria Triome (PLST) IKO-250
+1 Kiora's Follower (LCC) 273
+1 Klauth's Will (AFC) 321
+1 Lifeblood Hydra (CMA) 124
+1 Lost in the Maze (MKM) 64
+1 Magewright's Stone (RVR) 462
+1 Magus of the Candelabra (M3C) 236
+1 Marvin, Murderous Mimic (DSK) 253
+1 Mindswipe (KTK) 189
+1 Mockingbird (BLB) 61
+1 Mossfire Valley (NCC) 414
+6 Mountain (SUM) 303
+1 Nature's Lore (MKC) 178
+1 Nyxborn Hydra (MH3) 164
+1 Pest Infestation (OTP) 30
+1 Pull from Tomorrow (BLC) 172
+1 Rampaging Yao Guai (PIP) 401
+1 Rejuvenating Springs (LTC) 325
+1 Retreat to Coralhelm (DSC) 126
+1 Rising of the Day (LTR) 427
+1 Rockfall Vale (WHO) 298
+1 Rootbound Crag (WHO) 300
+1 Rosheen Meanderer (IMA) 206
+1 Seeker of Skybreak (TMP) 254
+1 Shivan Devastator (PDMU) 143p
+1 Shivan Reef (DDU) 70
+1 Spire Garden (PCLB) 361s *F*
+1 Sting, the Glinting Dagger (LTR) 250
+1 Stormcarved Coast (WHO) 308
+1 Sulfur Falls (LTC) 333
+1 Temur Ascendancy (KTK) 207
+1 The Rollercrusher Ride (DSK) 155
+1 Thousand-Year Elixir (CMA) 236
+1 Three Visits (MKC) 189
+1 Training Center (CMM) 665
+1 Twinning Staff (C20) 70
+1 Unbound Flourishing (MH1) 189
+1 Vizier of Tumbling Sands (CMM) 131
+1 Voracious Hydra (M20) 200
+1 Wizard's Rockets (LTR) 252
+1 Yavimaya Coast (C19) 287
+1 Zoanthrope (40K) 149
+"""
 +++
 
 [[Magus Lucea Kane]] is a Timmy's dream commander. Big mana, big creatures, big spells? Heck yeah. And any deck that begs me to put [[Dopplegang]] in it is one I need to try out.

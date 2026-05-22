@@ -1,0 +1,33 @@
+{{- if .Params.image -}}
+<img class="commander-preview-img" src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+{{- else if .Params.commander -}}
+  {{- $line := replaceRE `\s*\*F\*$` "" (trim .Params.commander " ") -}}
+  {{- $match := findRESubmatch `^(.+?)\s+\(([^)]+)\)\s+(.+)$` $line -}}
+  {{- if $match -}}
+    {{- $name := index (index $match 0) 1 -}}
+    {{- $set := index (index $match 0) 2 | lower -}}
+    {{- $cn := index (index $match 0) 3 -}}
+    {{- $siteURL := default "https://theloreaxe.com/" .Site.BaseURL -}}
+    {{- $headers := dict
+      "Accept" "application/json;q=0.9,*/*;q=0.8"
+      "User-Agent" (printf "theloreaxe/1.0 (+%s)" $siteURL)
+    -}}
+    {{- $url := printf "https://api.scryfall.com/cards/%s/%s" $set $cn -}}
+    {{- $opts := dict "method" "GET" "headers" $headers -}}
+    {{- with resources.GetRemote $url $opts -}}
+      {{- $card := .Content | transform.Unmarshal -}}
+      {{- $imgUrl := "" -}}
+      {{- with $card.image_uris -}}
+        {{- $imgUrl = .normal -}}
+      {{- end -}}
+      {{- if and (not $imgUrl) $card.card_faces -}}
+        {{- with index (index $card.card_faces 0) "image_uris" -}}
+          {{- $imgUrl = .normal -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if $imgUrl }}
+<img class="commander-preview-img" src="{{ $imgUrl }}" alt="{{ $name }}" loading="lazy">
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

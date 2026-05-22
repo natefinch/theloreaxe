@@ -2,7 +2,7 @@
 title: "MoxTags"
 description: "Scryfall Tagger labels, right inside Moxfield. Find cards by what they do, not how they're worded — with right-click tag menus, multi-tag search, and autocomplete."
 weight: 2
-icon: '<svg viewBox="0 0 64 64" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 27L31 14H46L50 18V33L37 46L18 27Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="39" cy="25" r="3" stroke="currentColor" stroke-width="2.4"/><path d="M24 33L31 40" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'
+icon: "/images/moxtags-gem-128.png"
 ---
 
 You know your deck needs more ramp, or another sacrifice outlet — but crafting the perfect search query is maddening. Cards that do the same thing are worded completely differently, and even a careful search will miss options you didn't think to look for.
