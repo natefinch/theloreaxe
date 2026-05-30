@@ -5,6 +5,8 @@ weight: 2
 icon: "/images/moxtags-gem-128.png"
 ---
 
+**[Download from GitHub Releases →](https://github.com/natefinch/moxtags/releases)**
+
 You know your deck needs more ramp, or another sacrifice outlet — but crafting the perfect search query is maddening. Cards that do the same thing are worded completely differently, and even a careful search will miss options you didn't think to look for.
 
 Scryfall's Tagger system fixes this. Thousands of cards have been labeled by the community with intuitive tags like "ramp," "card-draw," "sacrifice-outlet," and "board-wipe" — labels that describe what a card *does*, not just what it *says*. The problem? Moxfield doesn't surface any of it.
