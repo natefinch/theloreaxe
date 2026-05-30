@@ -5,6 +5,8 @@ weight: 1
 icon: "/images/moxmox-128.png"
 ---
 
+**[Download from GitHub Releases →](https://github.com/natefinch/moxmox/releases)**
+
 Moxfield has a great playtest feature — but it's single-player. MoxMox changes that. It's a browser extension that turns Moxfield's playtest page into a real multiplayer game table, syncing everything you need between players in real time.
 
 Play Commander with friends across the internet, or try DanDan with a shared library. No signup, no accounts. Just open a deck, share a code, and play.
