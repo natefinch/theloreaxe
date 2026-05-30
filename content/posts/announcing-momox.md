@@ -14,7 +14,7 @@ I'm sure there are some ways to play online, but I am used to the simplicity of 
 
 MoxMox is a browser extension that makes it possible to play shared deck games on Moxfield's playtester. 
 
-This page has some videos of its functioalityin action:
+This page has some videos of its functionality in action:
 
 https://theloreaxe.org/projects/moxmox/
 
