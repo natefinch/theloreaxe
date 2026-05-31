@@ -1,6 +1,6 @@
 ---
 title: "MoxTags"
-description: "Scryfall Tagger labels, right inside Moxfield. Find cards by what they do, not how they're worded — with right-click tag menus, multi-tag search, and autocomplete."
+description: "Scryfall Tagger tags, right inside Moxfield, Archidekt, and prominent on Scryfall. Find cards by what they do, not how they're worded — with right-click tag menus, multi-tag search, and autocomplete."
 weight: 2
 icon: "/images/moxtags-gem-128.png"
 ---
@@ -11,9 +11,12 @@ You know your deck needs more ramp, or another sacrifice outlet — but crafting
 
 Scryfall's Tagger system fixes this. Thousands of cards have been labeled by the community with intuitive tags like "ramp," "card-draw," "sacrifice-outlet," and "board-wipe" — labels that describe what a card *does*, not just what it *says*. The problem? Moxfield doesn't surface any of it.
 
-MoxTags brings all of that data directly into Moxfield. No more switching between sites.
+MoxTags brings all of that data directly into the MTG sites you use for deckbuilding - Scryfall, Moxfield, and Archidekt. 
 
 ![MoxTags context menu showing art tags and card tags on a Moxfield deck](https://github.com/user-attachments/assets/a9f14f67-ef6a-4138-8c11-e9fd86b72ed0)
+
+
+
 
 ## How It Works
 
@@ -47,6 +50,7 @@ When searching for cards to add to your deck, MoxTags adds tag menus to both ima
 
 ## Key Features
 
+- **Cross-Plaform** Firefox or Chrome, Archidekt or Moxfield, tags everywhere
 - **Art and card tags** for every card, right in the context menu
 - **Multi-tag search** — check several tags and find cards matching any combination
 - **Works with private decks** — reads your deck data as the page loads
